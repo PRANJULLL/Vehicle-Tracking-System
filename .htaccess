@@ -1,0 +1,16 @@
+# Safety net for hosts that can't set /public as the document root.
+# If that's your setup, this blocks direct access to source/config/cache
+# and sends visitors into the app. Properly configured hosts (document
+# root = /public) never even see this file.
+
+RewriteEngine On
+
+<FilesMatch "\.env$">
+    Require all denied
+</FilesMatch>
+
+RewriteRule ^(src|cache)/ - [F,L]
+
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^$ public/index.html [L]
+RewriteRule ^(?!public/)(.*)$ public/$1 [L]

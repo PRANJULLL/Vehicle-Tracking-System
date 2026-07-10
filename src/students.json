@@ -1,0 +1,7 @@
+{
+  "STU001": { "name": "Aarav Sharma", "busId": 1 },
+  "STU002": { "name": "Priya Verma", "busId": 1 },
+  "STU003": { "name": "Karan Mehta", "busId": 2 },
+  "STU004": { "name": "Sneha Kapoor", "busId": 3 },
+  "STU005": { "name": "Rohan Gill", "busId": 4 }
+}

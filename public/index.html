@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+<meta name="theme-color" content="#16273c" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes" />
+<title>Where's My Bus — School Bus Tracker</title>
+<meta name="description" content="See your child's school bus on a map in real time." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <span class="topbar-icon" aria-hidden="true">🚌</span>
+      <div class="topbar-text">
+        <h1>Where's My Bus</h1>
+        <p>Track your child's school bus, live</p>
+      </div>
+    </div>
+  </header>
+  <div class="hazard-stripe" aria-hidden="true"></div>
+
+  <!-- Main content -->
+  <main>
+
+    <!-- Search card -->
+    <section class="search-card" aria-label="Find your child's bus">
+      <label for="studentId">Your child's Student ID</label>
+      <div class="search-row">
+        <input
+          id="studentId"
+          type="text"
+          inputmode="text"
+          placeholder="e.g. STU001"
+          autocomplete="off"
+          autocapitalize="characters"
+        />
+        <button id="trackBtn" type="button">
+          <span class="btn-icon" aria-hidden="true">🔍</span>
+          <span>Track Bus</span>
+        </button>
+      </div>
+      <p class="search-hint">You'll find this ID on the card given by your school.</p>
+    </section>
+
+    <!-- Status banner: shows loading / errors / nearby alerts -->
+    <div id="statusBanner" class="status-banner hidden" role="status" aria-live="polite">
+      <span id="statusIcon" class="status-icon" aria-hidden="true"></span>
+      <span id="statusText"></span>
+    </div>
+
+    <!-- Map -->
+    <div class="map-wrap">
+      <div id="map"></div>
+
+      <!-- Empty state shown before a search -->
+      <div id="emptyState" class="empty-state">
+        <span class="empty-state-icon" aria-hidden="true">🚏</span>
+        <p><strong>No bus selected yet</strong></p>
+        <p>Enter your child's Student ID above and tap<br><strong>Track Bus</strong> to see it on the map.</p>
+      </div>
+
+      <!-- Bottom info sheet, shown once a bus is being tracked -->
+      <section id="infoSheet" class="info-sheet hidden" aria-label="Bus details">
+        <div class="info-sheet-handle" aria-hidden="true"></div>
+        <div class="info-sheet-top">
+          <div class="info-child">
+            <span id="studentName" class="info-child-name">—</span>
+            <span id="proximityPill" class="pill pill-hidden">On the way</span>
+          </div>
+          <button id="newSearchBtn" type="button" class="link-btn">Track a different child</button>
+        </div>
+        <div class="info-sheet-details">
+          <div class="info-detail">
+            <span class="info-detail-label">Bus number</span>
+            <span id="busNo" class="info-detail-value">—</span>
+          </div>
+          <div class="info-detail">
+            <span class="info-detail-label">Last updated</span>
+            <span id="lastUpdated" class="info-detail-value">—</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="app-footer">
+    <p>If the bus doesn't appear, please contact your school office.</p>
+  </footer>
+
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

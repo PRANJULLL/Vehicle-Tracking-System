@@ -1,0 +1,539 @@
+/* =========================================================
+   Design tokens
+   Grounded in the actual colors of a school bus: deep navy
+   (trust, night sky a parent watches under) + bus yellow
+   (recognition, warmth) + a black/yellow hazard stripe as
+   the one signature motif, echoing the stripe painted on
+   the back of a real school bus.
+   ========================================================= */
+:root {
+  --navy-900: #16273c;
+  --navy-800: #1b3350;
+  --navy-700: #24476f;
+  --bus-yellow: #ffc93c;
+  --bus-yellow-dark: #e6a916;
+  --paper: #faf7f0;
+  --paper-card: #ffffff;
+  --ink: #1f2a37;
+  --ink-soft: #5b6b7c;
+  --line: #e7e0d2;
+  --green: #2f9e5b;
+  --green-bg: #e7f5ec;
+  --amber: #b3760b;
+  --amber-bg: #fff3d9;
+  --red: #c8402e;
+  --red-bg: #fdeae7;
+
+  --font-display: "Baloo 2", "Segoe UI", sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+  --shadow-card: 0 6px 24px rgba(22, 39, 60, 0.12);
+  --shadow-float: 0 10px 30px rgba(22, 39, 60, 0.18);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  overscroll-behavior: none; /* stop the whole page rubber-banding on mobile */
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font-family: inherit;
+  touch-action: manipulation; /* removes the 300ms tap delay on mobile */
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* App shell fills the real visible viewport on phones (dvh accounts for
+   the browser's address bar showing/hiding), and never page-scrolls —
+   it behaves like a native app screen instead of a long web page. */
+.app {
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* =========================================================
+   Top bar + signature hazard stripe
+   ========================================================= */
+.topbar {
+  background: var(--navy-900);
+  color: #fff;
+  padding: calc(env(safe-area-inset-top, 0px) + 14px) 20px 14px;
+  flex-shrink: 0;
+}
+
+.topbar-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.topbar-icon {
+  font-size: 34px;
+  line-height: 1;
+  background: var(--bus-yellow);
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.topbar-text h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  margin: 0 0 2px;
+  letter-spacing: 0.2px;
+}
+
+.topbar-text p {
+  margin: 0;
+  font-size: 13.5px;
+  color: #c7d3e0;
+  font-weight: 500;
+}
+
+.hazard-stripe {
+  height: 6px;
+  width: 100%;
+  flex-shrink: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--bus-yellow) 0 14px,
+    var(--navy-900) 14px 28px
+  );
+}
+
+/* =========================================================
+   Layout
+   Mobile-first: main fills all remaining vertical space below the
+   top bar, and the map grows/shrinks to take up whatever is left
+   after the search card and status banner — nothing gets clipped
+   off-screen and nothing requires scrolling to reach.
+   ========================================================= */
+main {
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 12px 12px 8px;
+  flex: 1;
+  min-height: 0; /* required for flex children to shrink instead of overflowing */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* =========================================================
+   Search card
+   ========================================================= */
+.search-card {
+  background: var(--paper-card);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px 14px;
+  box-shadow: var(--shadow-card);
+  flex-shrink: 0;
+}
+
+.search-card label {
+  display: block;
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: var(--navy-900);
+}
+
+.search-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.search-row input {
+  flex: 1 1 160px;
+  min-width: 0;
+  padding: 14px 16px;
+  border: 2px solid var(--line);
+  border-radius: var(--radius-md);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--navy-900);
+  background: var(--paper);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.search-row input::placeholder {
+  text-transform: none;
+  font-weight: 400;
+  color: #9aa5b1;
+  letter-spacing: normal;
+}
+
+.search-row input:focus {
+  outline: none;
+  border-color: var(--bus-yellow-dark);
+  background: #fff;
+}
+
+.search-row button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--bus-yellow);
+  color: var(--navy-900);
+  border: none;
+  padding: 14px 22px;
+  border-radius: var(--radius-md);
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  min-height: 52px;
+  transition: transform 0.06s ease, background 0.15s ease;
+}
+
+.search-row button:hover {
+  background: var(--bus-yellow-dark);
+}
+
+.search-row button:active {
+  transform: scale(0.97);
+}
+
+.btn-icon {
+  font-size: 17px;
+}
+
+.search-hint {
+  margin: 10px 2px 0;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+
+/* =========================================================
+   Status banner
+   ========================================================= */
+.status-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  font-size: 14.5px;
+  font-weight: 600;
+  background: var(--amber-bg);
+  color: #7a5206;
+  flex-shrink: 0;
+}
+
+.status-banner.status-error {
+  background: var(--red-bg);
+  color: #8c2c1e;
+}
+
+.status-banner.status-success {
+  background: var(--green-bg);
+  color: #1d6e42;
+}
+
+.status-icon {
+  font-size: 18px;
+}
+
+/* =========================================================
+   Map + overlays
+   ========================================================= */
+.map-wrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  flex: 1;
+  min-height: 0; /* let flexbox size this from available space, not a fixed floor */
+}
+
+#map {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.leaflet-routing-container {
+  display: none; /* hide turn-by-turn instructions panel */
+}
+
+/* Leaflet's default zoom buttons (26px) are too small to comfortably
+   tap on a phone — enlarge them to a proper touch target */
+.leaflet-touch .leaflet-bar a,
+.leaflet-control-zoom a {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+}
+
+.leaflet-control-attribution {
+  font-size: 10px;
+}
+
+.bus-icon-wrap {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bus-yellow);
+  border-radius: 50%;
+  border: 3px solid var(--navy-900);
+  font-size: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.parent-icon-wrap {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--navy-700);
+  border: 3px solid #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Empty state, centered over the map before a search */
+.empty-state {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  background: rgba(250, 247, 240, 0.94);
+}
+
+.empty-state-icon {
+  font-size: 44px;
+  margin-bottom: 10px;
+}
+
+.empty-state p {
+  margin: 4px 0;
+  color: var(--ink-soft);
+  font-size: 15px;
+  max-width: 260px;
+}
+
+.empty-state p strong {
+  color: var(--navy-900);
+}
+
+/* Bottom info sheet, Uber/Ola-style floating card over the map */
+.info-sheet {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  z-index: 2;
+  background: var(--paper-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-float);
+  padding: 10px 16px calc(env(safe-area-inset-bottom, 0px) + 12px);
+  max-height: 45%;
+  overflow-y: auto;
+}
+
+.info-sheet-handle {
+  width: 40px;
+  height: 4px;
+  background: var(--line);
+  border-radius: 4px;
+  margin: 0 auto 10px;
+}
+
+.info-sheet-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.info-child {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.info-child-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 19px;
+  color: var(--navy-900);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 700;
+  background: var(--amber-bg);
+  color: #7a5206;
+}
+
+.pill-hidden {
+  display: none;
+}
+
+.pill-nearby {
+  background: var(--green-bg);
+  color: #1d6e42;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--navy-700);
+  font-size: 13.5px;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 4px 0;
+}
+
+.info-sheet-details {
+  display: flex;
+  gap: 26px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.info-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.info-detail-label {
+  font-size: 12px;
+  color: var(--ink-soft);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.info-detail-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy-900);
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+.app-footer {
+  text-align: center;
+  padding: 8px 16px calc(env(safe-area-inset-bottom, 0px) + 10px);
+  flex-shrink: 0;
+}
+
+.app-footer p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+/* =========================================================
+   Responsive
+   Primary target is a phone held in one hand, so the base styles
+   above are already phone-sized. These queries adjust for the
+   other cases: very small/older phones, landscape phones, and
+   larger screens (tablet/desktop).
+   ========================================================= */
+
+/* Larger screens: give the app some breathing room instead of
+   stretching a phone layout edge-to-edge */
+@media (min-width: 560px) {
+  .topbar-text h1 { font-size: 25px; }
+  main { padding: 18px 16px 12px; gap: 14px; }
+  .search-card { padding: 18px 18px 16px; }
+}
+
+@media (min-width: 720px) {
+  .app { height: auto; min-height: 100vh; min-height: 100dvh; overflow: visible; }
+  body { overflow-y: auto; }
+  .map-wrap { min-height: 560px; }
+}
+
+/* Small/older phones (e.g. iPhone SE-class, ~360px and under):
+   tighten spacing and stack the search button under the input so
+   both stay comfortably tappable */
+@media (max-width: 380px) {
+  .topbar { padding-left: 14px; padding-right: 14px; }
+  .topbar-icon { width: 44px; height: 44px; min-width: 44px; font-size: 28px; }
+  .topbar-text h1 { font-size: 19px; }
+  .topbar-text p { font-size: 12.5px; }
+  main { padding: 10px 10px 6px; gap: 8px; }
+  .search-card { padding: 14px 14px 12px; }
+  .search-row { flex-direction: column; }
+  .search-row button { width: 100%; }
+  .info-child-name { font-size: 17px; }
+}
+
+/* Landscape phones: vertical space is the scarce resource here, so
+   shrink the chrome aggressively and let the map take the rest */
+@media (max-height: 480px) and (orientation: landscape) {
+  .topbar { padding-top: calc(env(safe-area-inset-top, 0px) + 8px); padding-bottom: 8px; }
+  .topbar-text p { display: none; }
+  .hazard-stripe { height: 4px; }
+  main { padding: 8px 12px 4px; gap: 6px; }
+  .search-card { padding: 10px 14px; }
+  .search-card label { margin-bottom: 5px; font-size: 13px; }
+  .search-hint { display: none; }
+  .app-footer { display: none; }
+  .info-sheet { max-height: 60%; padding-top: 6px; }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+
+/* Visible keyboard focus everywhere */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--navy-700);
+  outline-offset: 2px;
+}
