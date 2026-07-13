@@ -6,9 +6,9 @@
  * GPS location for that bus, and returns it to the parent's browser.
  */
 
-require_once __DIR__ . '/../../src/buses.php';
-require_once __DIR__ . '/../../src/cache.php';
-require_once __DIR__ . '/../../src/fleethunt.php';
+require_once __DIR__ . '/../src/buses.php';
+require_once __DIR__ . '/../src/cache.php';
+require_once __DIR__ . '/../src/fleethunt.php';
 
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
@@ -35,7 +35,7 @@ if ($studentId === '') {
     exit;
 }
 
-$studentsPath = __DIR__ . '/../../src/students.json';
+$studentsPath = __DIR__ . '/../src/students.json';
 $students = json_decode(file_get_contents($studentsPath), true) ?? [];
 
 $key = strtoupper($studentId);
