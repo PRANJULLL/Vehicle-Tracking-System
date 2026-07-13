@@ -1,9 +1,11 @@
+Options +FollowSymLinks -MultiViews
 RewriteEngine On
+RewriteBase /
 
 # Block direct web access to sensitive directories and files
 RewriteRule ^(src|cache)(/|$) - [F,L]
 
-<FilesMatch "\.(env)$">
+<FilesMatch "\.env$">
     Require all denied
 </FilesMatch>
 
@@ -12,9 +14,7 @@ RewriteRule ^(src|cache)(/|$) - [F,L]
     Require all denied
 </FilesMatch>
 
-# Clean URL rewrites
-# /api/track -> api/track.php
+# Clean URL rewrites (without .php extension)
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^api/track/?$ api/track.php [L,QSA]
-
-# /health -> api/health.php
 RewriteRule ^health/?$ api/health.php [L,QSA]
