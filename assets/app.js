@@ -155,7 +155,7 @@ function stopTicking() {
 // --- Main fetch/render cycle ---
 async function fetchAndRender(studentId) {
   try {
-    const res = await fetch('api/track.php', {
+    const res = await fetch('/api/track.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ student_id: studentId }),
