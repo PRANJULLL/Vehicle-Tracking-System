@@ -1,7 +1,9 @@
 {
-  "STU001": { "name": "Aarav Sharma", "busId": 1 },
-  "STU002": { "name": "Priya Verma", "busId": 1 },
-  "STU003": { "name": "Karan Mehta", "busId": 2 },
-  "STU004": { "name": "Sneha Kapoor", "busId": 3 },
-  "STU005": { "name": "Rohan Gill", "busId": 4 }
+  "MIS-259": { "name": "Ananya",        "class": "Nursery (Sapphire)", "phone": "7837893502", "busId": 5 },
+  "MIS-32":  { "name": "Harseerat Kaur","class": "1st",                "phone": "9814258637", "busId": 1 },
+  "MIS-227": { "name": "Saumil",        "class": "2nd",                "phone": "9877843865", "busId": 6 },
+  "MIS-282": { "name": "Namanjot Kaur", "class": "Nursery (Sapphire)", "phone": "7986129042", "busId": 2 },
+  "MIS-307": { "name": "Shivam Garg",   "class": "6th",                "phone": "9465526675", "busId": 1 },
+  "MIS-41":  { "name": "Devansh Mittal","class": "4th",                "phone": "8837768196", "busId": 6 },
+  "MIS-140": { "name": "Ratanbir Kaur", "class": "UKG (Indigo)",       "phone": "9465930024", "busId": 4 }
 }
