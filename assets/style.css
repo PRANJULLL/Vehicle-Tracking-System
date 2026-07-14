@@ -262,6 +262,46 @@ main {
   color: #1d6e42;
 }
 
+.status-banner.status-warn {
+  background: var(--amber-bg);
+  color: #7a5206;
+}
+
+/* =========================================================
+   Bus Status Badge
+   Three states, each with a clear colour meaning:
+     🟢 moving   — green  (bus is on its way)
+     🟡 at_school — amber (bus still at school, not departed)
+     ⚫ stopped   — grey  (bus has paused mid-route)
+   ========================================================= */
+.bus-status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 13px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1px;
+  /* default — neutral until a class is added */
+  background: #f0f0f0;
+  color: var(--ink-soft);
+}
+
+.bus-status-badge.badge-moving {
+  background: var(--green-bg);
+  color: #1d6e42;
+}
+
+.bus-status-badge.badge-at-school {
+  background: var(--amber-bg);
+  color: #7a5206;
+}
+
+.bus-status-badge.badge-stopped {
+  background: #efefef;
+  color: #555;
+}
+
 .status-icon {
   font-size: 18px;
 }

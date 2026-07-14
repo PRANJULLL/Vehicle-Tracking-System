@@ -28,7 +28,7 @@ const statusText = document.getElementById('statusText');
 const emptyState = document.getElementById('emptyState');
 const infoSheet = document.getElementById('infoSheet');
 const studentNameEl = document.getElementById('studentName');
-const proximityPill = document.getElementById('proximityPill');
+const busStatusBadge = document.getElementById('busStatusBadge');
 const busNoEl = document.getElementById('busNo');
 const lastUpdatedEl = document.getElementById('lastUpdated');
 
@@ -49,13 +49,16 @@ const parentIcon = L.divIcon({
 
 // --- Status banner helpers ---
 function showStatus(message, kind = 'info') {
-  statusBanner.classList.remove('hidden', 'status-error', 'status-success');
+  statusBanner.classList.remove('hidden', 'status-error', 'status-success', 'status-warn');
   if (kind === 'error') {
     statusBanner.classList.add('status-error');
-    statusIcon.textContent = '⚠️';
+    statusIcon.textContent = '\u26A0\uFE0F';
   } else if (kind === 'success') {
     statusBanner.classList.add('status-success');
-    statusIcon.textContent = '✅';
+    statusIcon.textContent = '\u2705';
+  } else if (kind === 'warn') {
+    statusBanner.classList.add('status-warn');
+    statusIcon.textContent = '\uD83C\uDFEB';
   } else {
     statusIcon.textContent = 'ℹ️';
   }
@@ -103,6 +106,36 @@ function updateBusMarker(lat, lng) {
     map.setView(latLng, 14);
   } else {
     busMarker.setLatLng(latLng);
+  }
+}
+
+/**
+ * Update the Bus Status badge and top banner based on what the server returned.
+ *
+ * busStatus values (set by the PHP backend):
+ *   'at_school' — speed == 0 AND within 300 m of school
+ *   'stopped'   — speed == 0 but NOT near school
+ *   'moving'    — speed > 0
+ */
+function updateBusStatus(busStatus) {
+  busStatusBadge.className = 'bus-status-badge'; // reset
+  hideStatus();
+
+  if (busStatus === 'at_school') {
+    busStatusBadge.textContent = '\uD83C\uDFEB At School';
+    busStatusBadge.classList.add('badge-at-school');
+    showStatus(
+      '\uD83C\uDFEB Bus has not started from school yet.',
+      'warn'
+    );
+  } else if (busStatus === 'stopped') {
+    busStatusBadge.textContent = '\u23F8\uFE0F Bus Stopped';
+    busStatusBadge.classList.add('badge-stopped');
+    showStatus('Bus is at bus stop.', 'info');
+  } else {
+    // moving
+    busStatusBadge.textContent = '\uD83D\uDFE2 On the Way';
+    busStatusBadge.classList.add('badge-moving');
   }
 }
 
@@ -182,28 +215,14 @@ async function fetchAndRender(studentId) {
     const { lat, lng } = data.location;
     if (lat == null || lng == null) {
       showStatus("We can't see this bus's location right now. It may be off-route or its tracker is offline — please try again shortly.", 'error');
-      proximityPill.classList.add('pill-hidden');
+      busStatusBadge.textContent = '\u2014';
+      busStatusBadge.className = 'bus-status-badge';
       return;
     }
 
     updateBusMarker(lat, lng);
     updateRoute(lat, lng);
-
-    proximityPill.classList.remove('pill-hidden');
-    if (parentLatLng) {
-      const dist = distanceMeters(parentLatLng[0], parentLatLng[1], lat, lng);
-      if (dist < 300) {
-        proximityPill.textContent = '🚌 Nearby!';
-        proximityPill.classList.add('pill-nearby');
-        showStatus('The bus is close by — it should arrive any moment.', 'success');
-      } else {
-        proximityPill.textContent = 'On the way';
-        proximityPill.classList.remove('pill-nearby');
-      }
-    } else {
-      proximityPill.textContent = 'On the way';
-      proximityPill.classList.remove('pill-nearby');
-    }
+    updateBusStatus(data.busStatus || 'moving');
   } catch (err) {
     console.error(err);
     showStatus("We couldn't reach the tracker. Please check your internet connection and try again.", 'error');
