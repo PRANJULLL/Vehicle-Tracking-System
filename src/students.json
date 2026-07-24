@@ -1,9 +1,2636 @@
 {
-  "MIS-259": { "name": "Ananya",        "class": "Nursery (Sapphire)", "phone": "7837893502", "busId": 5 },
-  "MIS-32":  { "name": "Harseerat Kaur","class": "1st",                "phone": "9814258637", "busId": 1 },
-  "MIS-227": { "name": "Saumil",        "class": "2nd",                "phone": "9877843865", "busId": 6 },
-  "MIS-282": { "name": "Namanjot Kaur", "class": "Nursery (Sapphire)", "phone": "7986129042", "busId": 2 },
-  "MIS-307": { "name": "Shivam Garg",   "class": "6th",                "phone": "9465526675", "busId": 1 },
-  "MIS-41":  { "name": "Devansh Mittal","class": "4th",                "phone": "8837768196", "busId": 6 },
-  "MIS-140": { "name": "Ratanbir Kaur", "class": "UKG (Indigo)",       "phone": "9465930024", "busId": 4 }
+  "B1-001": {
+    "name": "Samarjot Singh",
+    "class": "LKG",
+    "phone": "8427064146",
+    "busId": 1,
+    "stop": "sunam",
+    "address": "Under Bridge, Sunam"
+  },
+  "B1-002": {
+    "name": "Saransh Mehrok",
+    "class": "LKG",
+    "phone": "6280562845",
+    "busId": 1,
+    "stop": "sunam",
+    "address": "Near Rose Gardner, Sunam"
+  },
+  "B1-003": {
+    "name": "Jahanvi",
+    "class": "Nursery",
+    "phone": "8360647360",
+    "busId": 1,
+    "stop": "sunam",
+    "address": "Near Mata Modi Chowk, Sunam"
+  },
+  "B1-004": {
+    "name": "Chirag",
+    "class": "Nursery",
+    "phone": "9872794436",
+    "busId": 1,
+    "stop": "sunam",
+    "address": "Near Govt. Hospital, Sunam"
+  },
+  "B1-005": {
+    "name": "Ekamdeep Ram",
+    "class": "Nursery",
+    "phone": "8729081606",
+    "busId": 1,
+    "stop": "sunam",
+    "address": "#62, Street No. 4, Stadium Road, Sunam"
+  },
+  "B1-006": {
+    "name": "Subhdeep Ram",
+    "class": "LKG",
+    "phone": "8729081607",
+    "busId": 1,
+    "stop": "sunam",
+    "address": "Namol Road, Sunam"
+  },
+  "B1-007": {
+    "name": "Gurleen Kaur",
+    "class": "Play Grp",
+    "phone": "9877166761",
+    "busId": 1,
+    "stop": "sunam",
+    "address": "Bathinda Road, Sangrur"
+  },
+  "B1-008": {
+    "name": "Shivyansh",
+    "class": "LKG",
+    "phone": "7814144404",
+    "busId": 1,
+    "stop": "sunam",
+    "address": "Near Hanjra Car Parking, Sunam"
+  },
+  "B1-009": {
+    "name": "Kiyansi Aggarwal",
+    "class": "UKG",
+    "phone": "9465842454",
+    "busId": 1,
+    "stop": "sunam",
+    "address": "Biggarwal Road, Near Atta Chakki, Sunam"
+  },
+  "B1-010": {
+    "name": "Manraj Singh",
+    "class": "LKG",
+    "phone": "7403300307",
+    "busId": 1,
+    "stop": "sunam",
+    "address": "#62, Street No. 4, Stadium Road, Sunam"
+  },
+  "B1-011": {
+    "name": "Taqdeer Kaur",
+    "class": "Nursery",
+    "phone": "8264250847",
+    "busId": 1,
+    "stop": "chathe_nakte",
+    "address": "Vill Chatha Nakta, Sangrur"
+  },
+  "B1-012": {
+    "name": "Wahenoor Singh",
+    "class": "UKG",
+    "phone": "9872574942",
+    "busId": 1,
+    "stop": "chathe_nakte",
+    "address": "Vill Chatha Nakta, Sangrur"
+  },
+  "B1-013": {
+    "name": "Tanveer Kaur",
+    "class": "UKG",
+    "phone": "9992750541",
+    "busId": 1,
+    "stop": "chathe_nakte",
+    "address": "Vill Chatha Nakta, Sangrur"
+  },
+  "B1-014": {
+    "name": "Guirisha Kaur",
+    "class": "Nursery",
+    "phone": "9888088600",
+    "busId": 1,
+    "stop": "chathe_nakte",
+    "address": "Vill Chatha Nakta, Sangrur"
+  },
+  "B2-001": {
+    "name": "Gurnoor",
+    "class": "LKG",
+    "phone": "9780571506",
+    "busId": 2,
+    "stop": "uppli",
+    "address": "Vill Uppli, Sangrur"
+  },
+  "B2-002": {
+    "name": "Manveer Kaur",
+    "class": "LKG",
+    "phone": "9779876933",
+    "busId": 2,
+    "stop": "uppli",
+    "address": "Vill Uppli, Sangrur"
+  },
+  "B2-003": {
+    "name": "Jasmeet Kaur",
+    "class": "LKG",
+    "phone": "7814511306",
+    "busId": 2,
+    "stop": "uppli",
+    "address": "Vill Uppli, Sangrur"
+  },
+  "B2-004": {
+    "name": "Simrat Kaur",
+    "class": "LKG",
+    "phone": "9815319277",
+    "busId": 2,
+    "stop": "uppli",
+    "address": "Vill Uppli, Sangrur"
+  },
+  "B2-005": {
+    "name": "Sehajdeep Singh",
+    "class": "Nursery",
+    "phone": "9463266404",
+    "busId": 2,
+    "stop": "uppli",
+    "address": "Vill Uppli, Sangrur"
+  },
+  "B2-006": {
+    "name": "Abijot Singh",
+    "class": "UKG",
+    "phone": "6239690075",
+    "busId": 2,
+    "stop": "tung",
+    "address": "Vill Tungan, Tung, Teh & Dist Sangrur"
+  },
+  "B2-007": {
+    "name": "Savreen Kaur",
+    "class": "UKG",
+    "phone": "9779639339",
+    "busId": 2,
+    "stop": "tung",
+    "address": "Vill Tungan, Tung, Teh & Dist Sangrur"
+  },
+  "B2-008": {
+    "name": "Hargun Kaur",
+    "class": "UKG",
+    "phone": "6284098968",
+    "busId": 2,
+    "stop": "tung",
+    "address": "Vill Tungan, Tung, Teh & Dist Sangrur"
+  },
+  "B2-009": {
+    "name": "Harsimran Kaur",
+    "class": "UKG",
+    "phone": "9876547345",
+    "busId": 2,
+    "stop": "tung",
+    "address": "Vill Tungan, Tung, Teh & Dist Sangrur"
+  },
+  "B2-010": {
+    "name": "Rehmat Kaur",
+    "class": "LKG",
+    "phone": "9855440968",
+    "busId": 2,
+    "stop": "tung",
+    "address": "Vill Tungan, Tung, Teh & Dist Sangrur"
+  },
+  "B2-011": {
+    "name": "Ganimat Kaur",
+    "class": "LKG",
+    "phone": "9855440968",
+    "busId": 2,
+    "stop": "tung",
+    "address": "Vill Tungan, Tung, Teh & Dist Sangrur"
+  },
+  "B2-012": {
+    "name": "Sukhmandeep Singh",
+    "class": "LKG",
+    "phone": "7527817785",
+    "busId": 2,
+    "stop": "tung",
+    "address": "Vill Tungan, Tung, Teh & Dist Sangrur"
+  },
+  "B2-013": {
+    "name": "Avneet Sharma",
+    "class": "LKG",
+    "phone": "9056919027",
+    "busId": 2,
+    "stop": "tung",
+    "address": "Vill Tungan, Tung, Teh & Dist Sangrur"
+  },
+  "B2-014": {
+    "name": "Dhashpreet Sharma",
+    "class": "Nursery",
+    "phone": "8283840404",
+    "busId": 2,
+    "stop": "tung",
+    "address": "Vill Tungan, Tung, Teh & Dist Sangrur"
+  },
+  "B2-015": {
+    "name": "Prabhjot Kaur",
+    "class": "Nursery",
+    "phone": "6280405047",
+    "busId": 2,
+    "stop": "tung",
+    "address": "Vill Tungan, Tung, Teh & Dist Sangrur"
+  },
+  "B2-016": {
+    "name": "Elison Kaur",
+    "class": "Nursery",
+    "phone": "6260075572",
+    "busId": 2,
+    "stop": "tung",
+    "address": "Vill Tungan, Tung, Teh & Dist Sangrur"
+  },
+  "B3-001": {
+    "name": "Nimrat Kaur",
+    "class": "UKG",
+    "phone": "6280659603",
+    "busId": 3,
+    "stop": "bharur",
+    "address": "Vill Bharur, Sangrur"
+  },
+  "B3-002": {
+    "name": "Arpanjot Kaur",
+    "class": "LKG",
+    "phone": "8968216370",
+    "busId": 3,
+    "stop": "bharur",
+    "address": "Vill Bharur, Sangrur"
+  },
+  "B3-003": {
+    "name": "Shejpreet Kaur",
+    "class": "UKG",
+    "phone": "7973148566",
+    "busId": 3,
+    "stop": "bharur",
+    "address": "Vill Bharur, Sangrur"
+  },
+  "B3-004": {
+    "name": "Kanwar",
+    "class": "LKG",
+    "phone": "7973148567",
+    "busId": 3,
+    "stop": "bharur",
+    "address": "Vill Bharur, Sangrur"
+  },
+  "B3-005": {
+    "name": "Harseerat Kaur",
+    "class": "LKG",
+    "phone": "7009396894",
+    "busId": 3,
+    "stop": "bharur",
+    "address": "Vill Bharur, Sangrur"
+  },
+  "B3-006": {
+    "name": "Harjap Kaur",
+    "class": "LKG",
+    "phone": "7888662053",
+    "busId": 3,
+    "stop": "bharur",
+    "address": "Vill Bharur, Sangrur"
+  },
+  "B3-007": {
+    "name": "Visavraaj Singh",
+    "class": "Nursery",
+    "phone": "7404822843",
+    "busId": 3,
+    "stop": "bharur",
+    "address": "Vill Bharur, Sangrur"
+  },
+  "B3-008": {
+    "name": "Namanjot Kaur",
+    "class": "Nursery",
+    "phone": "8847628452",
+    "busId": 3,
+    "stop": "bharur",
+    "address": "Vill Bharur, Sangrur"
+  },
+  "B4-001": {
+    "name": "Hardit Singh Grewal",
+    "class": "UKG",
+    "phone": "8427490609",
+    "busId": 4,
+    "stop": "kammo_majra",
+    "address": "Vill Wadda Kammomajra, Sangrur"
+  },
+  "B4-002": {
+    "name": "Bhumika",
+    "class": "Nursery",
+    "phone": "9464965489",
+    "busId": 4,
+    "stop": "illwal",
+    "address": "Vill Illwal, Sangrur"
+  },
+  "B4-003": {
+    "name": "Kudrat Kaur",
+    "class": "UKG",
+    "phone": "7009740024",
+    "busId": 4,
+    "stop": "illwal",
+    "address": "Vill Illwal, Sangrur"
+  },
+  "B4-004": {
+    "name": "Samreet Kaur",
+    "class": "UKG",
+    "phone": "8284035254",
+    "busId": 4,
+    "stop": "gaggarpur",
+    "address": "Vill Gagarpur, Sangrur"
+  },
+  "B4-005": {
+    "name": "Niyamatjot Singh",
+    "class": "UKG",
+    "phone": "9872630649",
+    "busId": 4,
+    "stop": "gaggarpur",
+    "address": "Vill Gagarpur, Sangrur"
+  },
+  "B4-006": {
+    "name": "Tanveer Singh Kahlon",
+    "class": "LKG",
+    "phone": "8968434047",
+    "busId": 4,
+    "stop": "gaggarpur",
+    "address": "Vill Gagarpur, Sangrur"
+  },
+  "B4-007": {
+    "name": "Paarmaan Kaur",
+    "class": "LKG",
+    "phone": "7657865166",
+    "busId": 4,
+    "stop": "kheri",
+    "address": "Vill Kheri, Sangrur"
+  },
+  "B4-008": {
+    "name": "Tejvir Singh",
+    "class": "LKG",
+    "phone": "9453186172",
+    "busId": 4,
+    "stop": "kheri",
+    "address": "Vill Kheri, Sangrur"
+  },
+  "B4-009": {
+    "name": "Amritpal Singh",
+    "class": "LKG",
+    "phone": "9872918406",
+    "busId": 4,
+    "stop": "kheri",
+    "address": "Vill Kheri, Sangrur"
+  },
+  "B4-010": {
+    "name": "Ratanbir Kaur",
+    "class": "UKG",
+    "phone": "9780636031",
+    "busId": 4,
+    "stop": "kheri",
+    "address": "Vill Kheri, Sangrur"
+  },
+  "B4-011": {
+    "name": "Yash Sharma",
+    "class": "Nursery",
+    "phone": "6284242807",
+    "busId": 4,
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "B4-012": {
+    "name": "Seerat",
+    "class": "Nursery",
+    "phone": "8699701027",
+    "busId": 4,
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "B4-013": {
+    "name": "Anantvir Singh",
+    "class": "1st",
+    "phone": "7986902611",
+    "busId": 4,
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "B4-014": {
+    "name": "Mankirat Singh",
+    "class": "UKG",
+    "phone": "9815798104",
+    "busId": 4,
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "B4-015": {
+    "name": "Gurkirat Kaur",
+    "class": "LKG",
+    "phone": "7009673566",
+    "busId": 4,
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "B4-016": {
+    "name": "Shehzad Randhawa",
+    "class": "LKG",
+    "phone": "9478671848",
+    "busId": 4,
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "B4-017": {
+    "name": "Simranveer Singh",
+    "class": "Nursery",
+    "phone": "8729003455",
+    "busId": 4,
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "B4-018": {
+    "name": "Rupinder Kaur",
+    "class": "UKG",
+    "phone": "7743037249",
+    "busId": 4,
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "B4-019": {
+    "name": "Tanvir Kaur",
+    "class": "Nursery",
+    "phone": "9815151149",
+    "busId": 4,
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "B4-020": {
+    "name": "Jasmeen Kaur",
+    "class": "Nursery",
+    "phone": "7696156745",
+    "busId": 4,
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "B4-021": {
+    "name": "Rehmat Kaur",
+    "class": "Nursery",
+    "phone": "6280687180",
+    "busId": 4,
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "B5-001": {
+    "name": "Piyush",
+    "class": "Nursery",
+    "phone": "7814707119",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "Partap Nagar, Sangrur"
+  },
+  "B5-002": {
+    "name": "Anandit Arora",
+    "class": "Nursery",
+    "phone": "7888679644",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "Khalifa Bagh, Sangrur"
+  },
+  "B5-003": {
+    "name": "Ananya",
+    "class": "Nursery",
+    "phone": "7696378519",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "Near Chabra Doctor, Sangrur"
+  },
+  "B5-004": {
+    "name": "Sukuman Singh",
+    "class": "Nursery",
+    "phone": "7833962740",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "Near Dharam Aarth Langar, Patiala Gate, Sangrur"
+  },
+  "B5-005": {
+    "name": "Varinda",
+    "class": "Nursery",
+    "phone": "8360664694",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "Partap Nagar, Sangrur"
+  },
+  "B5-006": {
+    "name": "Vanya",
+    "class": "Nursery",
+    "phone": "9463266404",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "Partap Nagar, Sangrur"
+  },
+  "B5-007": {
+    "name": "Pranvi",
+    "class": "LKG",
+    "phone": "9888547460",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "Partap Nagar, Sangrur"
+  },
+  "B5-008": {
+    "name": "Natalia",
+    "class": "LKG",
+    "phone": "7717338188",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "H.No.152, Ward No. 11, Shekhupura Basti, Sangrur"
+  },
+  "B5-009": {
+    "name": "Meshail Rana",
+    "class": "LKG",
+    "phone": "7009177382",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "Dr. Ambedkar Nagar, Sangrur"
+  },
+  "B5-010": {
+    "name": "Dakshit Chugh",
+    "class": "UKG",
+    "phone": "9646438989",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "Near Dharam Aarth Langar, Patiala Gate, Sangrur"
+  },
+  "B5-011": {
+    "name": "Imran Kaur",
+    "class": "LKG",
+    "phone": "9870000000",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "Pseb Office, Sohian Road, Sangrur"
+  },
+  "B5-012": {
+    "name": "Shivam Kagra",
+    "class": "LKG",
+    "phone": "8437153905",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "Pseb Office, Sohian Road, Sangrur"
+  },
+  "B5-013": {
+    "name": "Sadhvik",
+    "class": "LKG",
+    "phone": "8699355388",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "Pseb Office, Sohian Road, Sangrur"
+  },
+  "B5-014": {
+    "name": "Aznaal Alam",
+    "class": "Nursery",
+    "phone": "9417527340",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "Gazni Hotel, Sangrur"
+  },
+  "B5-015": {
+    "name": "Niketa",
+    "class": "LKG",
+    "phone": "7901949298",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "Indra Colony, Sangrur"
+  },
+  "B5-016": {
+    "name": "Lavina Sharma",
+    "class": "Nursery",
+    "phone": "6239865685",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "Vill Sujuma, Sangrur"
+  },
+  "B5-017": {
+    "name": "Guraselk Kaur",
+    "class": "Nursery",
+    "phone": "7396260000",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "Vill Sujuma, Sangrur"
+  },
+  "B5-018": {
+    "name": "Deepanshu Kumar",
+    "class": "LKG",
+    "phone": "7883359266",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "433, Dhalla Basti, Sangrur"
+  },
+  "B5-019": {
+    "name": "Bhavya",
+    "class": "Nursery",
+    "phone": "7888359267",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "434, Bhalla Basti, Sangrur"
+  },
+  "B5-020": {
+    "name": "Evan Kumar",
+    "class": "LKG",
+    "phone": "9878564091",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "H.S. No. 145, Ranjit Basti, Ward No. 10, Sangrur"
+  },
+  "B5-021": {
+    "name": "Navseerat Kaur",
+    "class": "LKG",
+    "phone": "9478328621",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "Sardar Basti, Sangrur"
+  },
+  "B5-022": {
+    "name": "Anayra Khanojia",
+    "class": "LKG",
+    "phone": "9592994712",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "Sardar Basti, Sangrur"
+  },
+  "B5-023": {
+    "name": "Lavika",
+    "class": "UKG",
+    "phone": "7973471450",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "H.No.10, Maan Colony, Sangrur"
+  },
+  "B5-024": {
+    "name": "Devansi",
+    "class": "UKG",
+    "phone": "7968838167",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "H.No.11, Maan Colony, Sangrur"
+  },
+  "B5-025": {
+    "name": "Dakshit Mittal",
+    "class": "Play Grp",
+    "phone": "7988888900",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "H.No.11, Maan Colony, Sangrur"
+  },
+  "B5-026": {
+    "name": "Samarthya",
+    "class": "UKG",
+    "phone": "7658821479",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "Punjab Agro Petrol Pump, Sangrur"
+  },
+  "B5-027": {
+    "name": "Bhavika",
+    "class": "Nursery",
+    "phone": "9780027700",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "Punjab Agro Petrol Pump, Sangrur"
+  },
+  "B5-028": {
+    "name": "Pranika",
+    "class": "UKG",
+    "phone": "7307605946",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "SST Nagar, Sangrur"
+  },
+  "B5-029": {
+    "name": "Amber",
+    "class": "LKG",
+    "phone": "7340907584",
+    "busId": 5,
+    "stop": "sangrur",
+    "address": "SST Nagar, Sangrur"
+  },
+  "B5-030": {
+    "name": "Parmveer Singh",
+    "class": "UKG",
+    "phone": "7719494630",
+    "busId": 5,
+    "stop": "kanoi",
+    "address": "Vill Kanoi, Sangrur"
+  },
+  "B5-031": {
+    "name": "Jaipartap Singh",
+    "class": "LKG",
+    "phone": "8360097822",
+    "busId": 5,
+    "stop": "kanoi",
+    "address": "Vill Kanoi, Sangrur"
+  },
+  "B5-032": {
+    "name": "Tanya",
+    "class": "LKG",
+    "phone": "7988000000",
+    "busId": 5,
+    "stop": "kanoi",
+    "address": "Vill Kanoi, Sangrur"
+  },
+  "B5-033": {
+    "name": "Prabhrai Kaur",
+    "class": "Nursery",
+    "phone": "9854286600",
+    "busId": 5,
+    "stop": "kanoi",
+    "address": "Vill Kanoi, Sangrur"
+  },
+  "B5-034": {
+    "name": "Abhijot Singh",
+    "class": "LKG",
+    "phone": "9877469512",
+    "busId": 5,
+    "stop": "kanoi",
+    "address": "Vill Kanoi, Sangrur"
+  },
+  "S1-001": {
+    "name": "Samarveer Singh",
+    "class": "2nd",
+    "phone": "9915520160",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Baag Vali Colony, Bathinda Road, Sunam"
+  },
+  "S1-002": {
+    "name": "Rajveer Singh",
+    "class": "7th",
+    "phone": "7710509077",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Guar Peer Basti, Bathinda Road, Sunam"
+  },
+  "S1-003": {
+    "name": "Harseerat Kaur",
+    "class": "4th",
+    "phone": "9814258637",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Ganj Shaheeda Mohala, Sunam"
+  },
+  "S1-004": {
+    "name": "Kabir Singh",
+    "class": "1st",
+    "phone": "7009200863",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Near Sita Sar Mandir, Sunam"
+  },
+  "S1-005": {
+    "name": "Manreet Kaur",
+    "class": "2nd",
+    "phone": "7009200863",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Near Sita Sar Mandir, Sunam"
+  },
+  "S1-006": {
+    "name": "Tejas Bansal",
+    "class": "2nd",
+    "phone": "6283893796",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Near Sita Sar Mandir, Sunam"
+  },
+  "S1-007": {
+    "name": "Fizza",
+    "class": "6th",
+    "phone": "6280535456",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Near Sita Sar Mandir, Sunam"
+  },
+  "S1-008": {
+    "name": "Manavdeep Singh",
+    "class": "3rd",
+    "phone": "9855407305",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Near Sita Sar Mandir, Sunam"
+  },
+  "S1-009": {
+    "name": "Fateh Singh",
+    "class": "4th",
+    "phone": "9592465497",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Guru Arjan Dev Colony, Sunam"
+  },
+  "S1-010": {
+    "name": "Gavish Arora",
+    "class": "4th",
+    "phone": "7340883068",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Guru Arjan Dev Colony, Sunam"
+  },
+  "S1-011": {
+    "name": "Divyansha Arora",
+    "class": "2nd",
+    "phone": "7009383517",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Guru Arjan Dev Colony, Sunam"
+  },
+  "S1-012": {
+    "name": "Saanh Bansal",
+    "class": "UKG",
+    "phone": "9653702541",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Guru Arjan Dev Colony, Sunam"
+  },
+  "S1-013": {
+    "name": "Dhruvita Bansal",
+    "class": "3rd",
+    "phone": "9653702542",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Guru Arjan Dev Colony, Sunam"
+  },
+  "S1-014": {
+    "name": "Gurleen Kaur",
+    "class": "3rd",
+    "phone": "9653729429",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Ganj Shaheeda Mohala, Sunam"
+  },
+  "S1-015": {
+    "name": "Mankirat Singh",
+    "class": "3rd",
+    "phone": "9653729429",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Guru Arjan Dev Colony, Sunam"
+  },
+  "S1-016": {
+    "name": "Sakshi",
+    "class": "1st",
+    "phone": "8847233047",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Ganj Shaheeda Mohala, Sunam"
+  },
+  "S1-017": {
+    "name": "Krisha",
+    "class": "3rd",
+    "phone": "9814019850",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Mata Modi Chownk, Sunam"
+  },
+  "S1-018": {
+    "name": "Shivam Garg",
+    "class": "8th",
+    "phone": "9478145360",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Peer Bana Bnoi Road, Sunam"
+  },
+  "S1-019": {
+    "name": "Harsh Singh",
+    "class": "4th",
+    "phone": "7973472257",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Near ITI Chownk, Sunam"
+  },
+  "S1-020": {
+    "name": "Jash",
+    "class": "1st",
+    "phone": "7973379400",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Near Under Bridge, Sunam"
+  },
+  "S1-021": {
+    "name": "Jaspreet Kaur",
+    "class": "2nd",
+    "phone": "7973379401",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Near Under Bridge, Sunam"
+  },
+  "S1-022": {
+    "name": "Khushdeep Kaur",
+    "class": "1st",
+    "phone": "7009142944",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Near Under Bridge, Sunam"
+  },
+  "S1-023": {
+    "name": "Karan Singh",
+    "class": "3rd",
+    "phone": "7009142945",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Near Under Bridge, Sunam"
+  },
+  "S1-024": {
+    "name": "King Kashwin",
+    "class": "1st",
+    "phone": "6280768144",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Biggarwal Road, Near Atta Chakki, Sunam"
+  },
+  "S1-025": {
+    "name": "Nainish Bansal",
+    "class": "3rd",
+    "phone": "9815736123",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Biggarwal Road, Near Atta Chakki, Sunam"
+  },
+  "S1-026": {
+    "name": "Divyansh Sharma",
+    "class": "1st",
+    "phone": "7814144404",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Near Hanura Car Parking, Sunam"
+  },
+  "S1-027": {
+    "name": "Rehmat Kaur",
+    "class": "1st",
+    "phone": "9814431984",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Kalgidhar Colony, Sunam"
+  },
+  "S1-028": {
+    "name": "Onkar Singh",
+    "class": "1st",
+    "phone": "7087486808",
+    "busId": 1,
+    "routeId": "1S",
+    "stop": "sunam",
+    "address": "Kalgidhar Colony, Sunam"
+  },
+  "S2-001": {
+    "name": "Hargurnoor Singh",
+    "class": "UKG",
+    "phone": "9478403011",
+    "busId": 2,
+    "routeId": "2S",
+    "stop": "hreri_road_sangrur",
+    "address": "Hareri Road, W. No. 1, Bhathal Colony, Sangrur"
+  },
+  "S2-002": {
+    "name": "Mayra Singla",
+    "class": "1st",
+    "phone": "9888057165",
+    "busId": 2,
+    "routeId": "2S",
+    "stop": "police_line_sangrur",
+    "address": "#339, Gali No. 1, Ajit Nagar Basti, Sangrur"
+  },
+  "S2-003": {
+    "name": "Gurshaan Singh Bhinder",
+    "class": "7th",
+    "phone": "9815213725",
+    "busId": 2,
+    "routeId": "2S",
+    "stop": "police_line_sangrur",
+    "address": "Near Police Line, Sangrur"
+  },
+  "S2-004": {
+    "name": "Gurfateh Singh",
+    "class": "2nd",
+    "phone": "9815176756",
+    "busId": 2,
+    "routeId": "2S",
+    "stop": "badrukhan",
+    "address": "Badrukhan, Sangrur"
+  },
+  "S2-005": {
+    "name": "Prabhnoor Kaur",
+    "class": "8th",
+    "phone": "9815176756",
+    "busId": 2,
+    "routeId": "2S",
+    "stop": "badrukhan",
+    "address": "Badrukhan, Sangrur"
+  },
+  "S2-006": {
+    "name": "Eric Sidhu",
+    "class": "1st",
+    "phone": "7710776777",
+    "busId": 2,
+    "routeId": "2S",
+    "stop": "mastuana",
+    "address": "Mastuana Sahib Gurudwara Sahib"
+  },
+  "S2-007": {
+    "name": "Molisha",
+    "class": "6th",
+    "phone": "9417466969",
+    "busId": 2,
+    "routeId": "2S",
+    "stop": "mastuana",
+    "address": "Mastuana Sahib Gurudwara Sahib"
+  },
+  "S2-008": {
+    "name": "Baldeep Singh",
+    "class": "3rd",
+    "phone": "9855951808",
+    "busId": 2,
+    "routeId": "2S",
+    "stop": "badrukhan",
+    "address": "Badrukhan, Sangrur"
+  },
+  "S2-009": {
+    "name": "Khushpreet Kaur",
+    "class": "3rd",
+    "phone": "9855951808",
+    "busId": 2,
+    "routeId": "2S",
+    "stop": "badrukhan",
+    "address": "Badrukhan, Sangrur"
+  },
+  "S2-010": {
+    "name": "Jashandeep Singh",
+    "class": "7th",
+    "phone": "9855983210",
+    "busId": 2,
+    "routeId": "2S",
+    "stop": "uppli",
+    "address": "Vill Uppli, Sangrur"
+  },
+  "S2-011": {
+    "name": "Arav",
+    "class": "7th",
+    "phone": "9888629800",
+    "busId": 2,
+    "routeId": "2S",
+    "stop": "uppli",
+    "address": "Vill Uppli, Sangrur"
+  },
+  "S2-012": {
+    "name": "Shanav",
+    "class": "3rd",
+    "phone": "9888629801",
+    "busId": 2,
+    "routeId": "2S",
+    "stop": "uppli",
+    "address": "Vill Uppli, Sangrur"
+  },
+  "S3-001": {
+    "name": "Ekam Singh Chatha",
+    "class": "1st",
+    "phone": "9465618693",
+    "busId": 3,
+    "routeId": "3S",
+    "stop": "chathe_nakte",
+    "address": "Vill Chatha Nakta, Sangrur"
+  },
+  "S3-002": {
+    "name": "Mehtaab Singh Sandhu",
+    "class": "1st",
+    "phone": "7973083639",
+    "busId": 3,
+    "routeId": "3S",
+    "stop": "chathe_nakte",
+    "address": "Vill Chatha Nakta, Sangrur"
+  },
+  "S3-003": {
+    "name": "Nishan Singh Chatha",
+    "class": "4th",
+    "phone": "9465618693",
+    "busId": 3,
+    "routeId": "3S",
+    "stop": "chathe_nakte",
+    "address": "Vill Chatha Nakta, Sangrur"
+  },
+  "S3-004": {
+    "name": "Shejpreet Kaur",
+    "class": "6th",
+    "phone": "9872574942",
+    "busId": 3,
+    "routeId": "3S",
+    "stop": "chathe_nakte",
+    "address": "Vill Chatha Nakta, Sangrur"
+  },
+  "S3-005": {
+    "name": "Jasmeen Kaur",
+    "class": "7th",
+    "phone": "9872411496",
+    "busId": 3,
+    "routeId": "3S",
+    "stop": "chathe_nakte",
+    "address": "Vill Chatha Nakta, Sangrur"
+  },
+  "S3-006": {
+    "name": "Mehakpreet Kaur",
+    "class": "8th",
+    "phone": "6284595172",
+    "busId": 3,
+    "routeId": "3S",
+    "stop": "bharur",
+    "address": "Vill Bharur, Chateh Sheikhan, Sangrur"
+  },
+  "S3-007": {
+    "name": "Gurnoor Singh",
+    "class": "8th",
+    "phone": "6284595172",
+    "busId": 3,
+    "routeId": "3S",
+    "stop": "bharur",
+    "address": "Vill Bharur, Chateh Sheikhan, Sangrur"
+  },
+  "S3-008": {
+    "name": "Manseerat Kaur",
+    "class": "2nd",
+    "phone": "7717693953",
+    "busId": 3,
+    "routeId": "3S",
+    "stop": "bharur",
+    "address": "Vill Bharur, Chateh Sheikhan, Sangrur"
+  },
+  "S3-009": {
+    "name": "Tanveer Kaur",
+    "class": "4th",
+    "phone": "6280659603",
+    "busId": 3,
+    "routeId": "3S",
+    "stop": "bharur",
+    "address": "Vill Bharur, Chateh Sheikhan, Sangrur"
+  },
+  "S3-010": {
+    "name": "Mannatpreet Kaur",
+    "class": "4th",
+    "phone": "7814574861",
+    "busId": 3,
+    "routeId": "3S",
+    "stop": "bharur",
+    "address": "Vill Bharur, Chateh Sheikhan, Sangrur"
+  },
+  "S3-011": {
+    "name": "Jasnaaz Kaur",
+    "class": "1st",
+    "phone": "7814574861",
+    "busId": 3,
+    "routeId": "3S",
+    "stop": "bharur",
+    "address": "Vill Bharur, Sangrur"
+  },
+  "S3-012": {
+    "name": "Aanav Sharma",
+    "class": "6th",
+    "phone": "7973785926",
+    "busId": 3,
+    "routeId": "3S",
+    "stop": "tung",
+    "address": "Vill Tungan, Tung, Teh & Dist Sangrur"
+  },
+  "S3-013": {
+    "name": "Gurpreet Singh",
+    "class": "6th",
+    "phone": "9915812006",
+    "busId": 3,
+    "routeId": "3S",
+    "stop": "tung",
+    "address": "Vill Tungan, Tung, Teh & Dist Sangrur"
+  },
+  "S3-014": {
+    "name": "Harfateh Singh",
+    "class": "2nd",
+    "phone": "7814246053",
+    "busId": 3,
+    "routeId": "3S",
+    "stop": "tung",
+    "address": "Vill Tungan, Tung, Teh & Dist Sangrur"
+  },
+  "S3-015": {
+    "name": "Gurleen Kaur",
+    "class": "6th",
+    "phone": "9878301656",
+    "busId": 3,
+    "routeId": "3S",
+    "stop": "tung",
+    "address": "Vill Tungan, Tung, Teh & Dist Sangrur"
+  },
+  "S3-016": {
+    "name": "Mahaveer Singh",
+    "class": "5th",
+    "phone": "6284624187",
+    "busId": 3,
+    "routeId": "3S",
+    "stop": "tung",
+    "address": "Vill Tungan, Tung, Teh & Dist Sangrur"
+  },
+  "S3-017": {
+    "name": "Anshpreet Singh",
+    "class": "4th",
+    "phone": "8847562723",
+    "busId": 3,
+    "routeId": "3S",
+    "stop": "tung",
+    "address": "Vill Tungan, Tung, Teh & Dist Sangrur"
+  },
+  "S3-018": {
+    "name": "Harvir Kaur",
+    "class": "1st",
+    "phone": "6280895008",
+    "busId": 3,
+    "routeId": "3S",
+    "stop": "tung",
+    "address": "Vill Tungan, Tung, Teh & Dist Sangrur"
+  },
+  "S3-019": {
+    "name": "Harfateh Singh Toor",
+    "class": "2nd",
+    "phone": "8837710855",
+    "busId": 3,
+    "routeId": "3S",
+    "stop": "tung",
+    "address": "Vill Tungan, Tung, Teh & Dist Sangrur"
+  },
+  "S3-020": {
+    "name": "Pushpinder Singh",
+    "class": "2nd",
+    "phone": "9915892317",
+    "busId": 3,
+    "routeId": "3S",
+    "stop": "tung",
+    "address": "Vill Tungan, Tung, Teh & Dist Sangrur"
+  },
+  "S3-021": {
+    "name": "Araman Kaur",
+    "class": "2nd",
+    "phone": "9915892317",
+    "busId": 3,
+    "routeId": "3S",
+    "stop": "tung",
+    "address": "Vill Tungan, Tung, Teh & Dist Sangrur"
+  },
+  "S4-001": {
+    "name": "Babbeet Kaur",
+    "class": "3rd",
+    "phone": "8054000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "mehlan",
+    "address": "Mehlan, Sangrur"
+  },
+  "S4-002": {
+    "name": "Mehakpreet Kaur",
+    "class": "8th",
+    "phone": "9870000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "illwal",
+    "address": "Illwal, Sangrur"
+  },
+  "S4-003": {
+    "name": "Bundip Singh",
+    "class": "1st",
+    "phone": "9460000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "illwal",
+    "address": "Vill Illwal, Sangrur"
+  },
+  "S4-004": {
+    "name": "Manisha",
+    "class": "1st",
+    "phone": "9460000001",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "illwal",
+    "address": "Vill Illwal, Sangrur"
+  },
+  "S4-005": {
+    "name": "Mehkin Kaur",
+    "class": "4th",
+    "phone": "9980000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kammo_majra",
+    "address": "Vill Wadda Kamomajra, Sangrur"
+  },
+  "S4-006": {
+    "name": "Jasreet Kaur",
+    "class": "4th",
+    "phone": "9980000001",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kammo_majra",
+    "address": "Vill Wadda Kamomajra, Sangrur"
+  },
+  "S4-007": {
+    "name": "Jasreet Kaur (II)",
+    "class": "5th",
+    "phone": "9980000002",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kammo_majra",
+    "address": "Vill Wadda Kamomajra, Sangrur"
+  },
+  "S4-008": {
+    "name": "Taranjot Singh",
+    "class": "3rd",
+    "phone": "9510000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kammo_majra",
+    "address": "Vill Wadda Kamomajra, Sangrur"
+  },
+  "S4-009": {
+    "name": "Nimrat Kaur",
+    "class": "1st",
+    "phone": "9980000003",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kheri",
+    "address": "Vill Kheri, Sangrur"
+  },
+  "S4-010": {
+    "name": "Nimrat Kaur Singh Sarao",
+    "class": "3rd",
+    "phone": "9590000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kheri",
+    "address": "Vill Kheri, Sangrur"
+  },
+  "S4-011": {
+    "name": "Navreet Kaur",
+    "class": "8th",
+    "phone": "9640000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-012": {
+    "name": "Ekampreet Kaur",
+    "class": "3rd",
+    "phone": "7010000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-013": {
+    "name": "Kaanveer Singh",
+    "class": "4th",
+    "phone": "7380000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-014": {
+    "name": "Jaspreet Kaur",
+    "class": "5th",
+    "phone": "7710000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-015": {
+    "name": "Jasmeen Kaur",
+    "class": "5th",
+    "phone": "7380000001",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-016": {
+    "name": "Armaan Singh Sidhu",
+    "class": "3rd",
+    "phone": "8720000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-017": {
+    "name": "Harekam Singh",
+    "class": "4th",
+    "phone": "6280000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-018": {
+    "name": "Ashmeet Singh",
+    "class": "5th",
+    "phone": "7500000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-019": {
+    "name": "Parneet Kaur",
+    "class": "3rd",
+    "phone": "9870000001",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-020": {
+    "name": "Samarveer Singh",
+    "class": "4th",
+    "phone": "9870000002",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-021": {
+    "name": "Rehmatjeet Kaur",
+    "class": "4th",
+    "phone": "9870000003",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-022": {
+    "name": "Sehajdeep Singh",
+    "class": "6th",
+    "phone": "8430000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-023": {
+    "name": "Prabhjot Singh",
+    "class": "7th",
+    "phone": "6280000001",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-024": {
+    "name": "Mehjadeep Kaur",
+    "class": "7th",
+    "phone": "8430000001",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-025": {
+    "name": "Dalnoob Singh Khushal Khan",
+    "class": "6th",
+    "phone": "9460000002",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-026": {
+    "name": "Jobandeep Singh",
+    "class": "8th",
+    "phone": "9460000003",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-027": {
+    "name": "Mandeep Kaur",
+    "class": "8th",
+    "phone": "9460000004",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-028": {
+    "name": "Gurleen Kaur",
+    "class": "1st",
+    "phone": "9460000005",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-029": {
+    "name": "Gurfateh Singh",
+    "class": "1st",
+    "phone": "9910000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-030": {
+    "name": "Dilshad",
+    "class": "1st",
+    "phone": "8700000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-031": {
+    "name": "Dilpreet Singh Nehal",
+    "class": "1st",
+    "phone": "7000000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-032": {
+    "name": "Anureet Kaur",
+    "class": "1st",
+    "phone": "8700000001",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-033": {
+    "name": "Bhavya",
+    "class": "1st",
+    "phone": "8520000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-034": {
+    "name": "Samjot Singh",
+    "class": "1st",
+    "phone": "7730000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-035": {
+    "name": "Gurraman Singh",
+    "class": "1st",
+    "phone": "7270000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-036": {
+    "name": "Armaan Singh",
+    "class": "1st",
+    "phone": "9810000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-037": {
+    "name": "Ramanjot",
+    "class": "1st",
+    "phone": "7710000001",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-038": {
+    "name": "Ashmeet Kaur",
+    "class": "1st",
+    "phone": "9430000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-039": {
+    "name": "Parinaaz",
+    "class": "1st",
+    "phone": "9340000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-040": {
+    "name": "Simranveer Singh",
+    "class": "1st",
+    "phone": "8720000001",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-041": {
+    "name": "Loveveer Singh",
+    "class": "1st",
+    "phone": "9330000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-042": {
+    "name": "Prabhnoor Kaur",
+    "class": "1st",
+    "phone": "9460000006",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-043": {
+    "name": "Jasraj Singh",
+    "class": "1st",
+    "phone": "7970000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-044": {
+    "name": "Ravneet Kaur",
+    "class": "1st",
+    "phone": "8430000002",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-045": {
+    "name": "Seerat Kaur",
+    "class": "1st",
+    "phone": "9500000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-046": {
+    "name": "Gurkirat Singh",
+    "class": "1st",
+    "phone": "9780000000",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S4-047": {
+    "name": "Karatveer Singh",
+    "class": "1st",
+    "phone": "9870000004",
+    "busId": 4,
+    "routeId": "4S",
+    "stop": "kular_khurd",
+    "address": "Vill Kular Khurd, Sangrur"
+  },
+  "S5-001": {
+    "name": "Parasdeep Singh",
+    "class": "7th",
+    "phone": "8360313315",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "Opposite Raj High School, Sangrur"
+  },
+  "S5-002": {
+    "name": "Amrinder Singh Gill",
+    "class": "7th",
+    "phone": "7508332174",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "mangwal",
+    "address": "Mangwal, Sangrur"
+  },
+  "S5-003": {
+    "name": "Gurshei Singh Gill",
+    "class": "1st",
+    "phone": "7508332174",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "mangwal",
+    "address": "Mangwal, Sangrur"
+  },
+  "S5-004": {
+    "name": "Navjot Kaur",
+    "class": "2nd",
+    "phone": "9779669925",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "jhaur_majra",
+    "address": "Jhaur Majra, Sangrur"
+  },
+  "S5-005": {
+    "name": "Gamandeep Singh",
+    "class": "1st",
+    "phone": "7009186628",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "jhaur_majra",
+    "address": "Jhaur Majra, Sangrur"
+  },
+  "S5-006": {
+    "name": "Gamandeep Singh (II)",
+    "class": "6th",
+    "phone": "9779213120",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "jhaur_majra",
+    "address": "Jhaur Majra, Sangrur"
+  },
+  "S5-007": {
+    "name": "Kishan Kaur",
+    "class": "3rd",
+    "phone": "9855609695",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "PSEB Office, Sohian Road, Sangrur"
+  },
+  "S5-008": {
+    "name": "Jashanpreet Kumar",
+    "class": "6th",
+    "phone": "9781605625",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "PSEB Office, Sohian Road, Sangrur"
+  },
+  "S5-009": {
+    "name": "Japjot Kaur",
+    "class": "2nd",
+    "phone": "9876732809",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "PSEB Office, Sohian Road, Sangrur"
+  },
+  "S5-010": {
+    "name": "Ayush Kumar",
+    "class": "1st",
+    "phone": "8591316308",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "PSEB Office, Sohian Road, Sangrur"
+  },
+  "S5-011": {
+    "name": "Paridhi Rawat",
+    "class": "6th",
+    "phone": "7827327787",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "Gazni Hotel, Sangrur"
+  },
+  "S5-012": {
+    "name": "Gurkirat Singh",
+    "class": "8th",
+    "phone": "9041340229",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "Gazni Hotel, Sangrur"
+  },
+  "S5-013": {
+    "name": "Natan Manchanda",
+    "class": "6th",
+    "phone": "9779213120",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "Friends Colony, Sohian Road, Sangrur"
+  },
+  "S5-014": {
+    "name": "Bami",
+    "class": "3rd",
+    "phone": "7808339113",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "Indra Colony, Sangrur"
+  },
+  "S5-015": {
+    "name": "Ruhanika",
+    "class": "1st",
+    "phone": "9855319439",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "Indra Colony, Sangrur"
+  },
+  "S5-016": {
+    "name": "Divanshu",
+    "class": "2nd",
+    "phone": "6239304582",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "Near Library, Sangrur"
+  },
+  "S5-017": {
+    "name": "Jashan Kumar",
+    "class": "4th",
+    "phone": "8699332215",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "Mandir Shri Kali Mata Devi, Sangrur"
+  },
+  "S5-018": {
+    "name": "Gurnoor Choudary",
+    "class": "2nd",
+    "phone": "8198876191",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "Sangrur"
+  },
+  "S5-019": {
+    "name": "Hazel Sharma",
+    "class": "1st",
+    "phone": "7814905907",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "Sangrur"
+  },
+  "S5-020": {
+    "name": "Lakshi",
+    "class": "2nd",
+    "phone": "7973471450",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "Maan Colony, Sangrur"
+  },
+  "S5-021": {
+    "name": "Hridik Goyal",
+    "class": "3rd",
+    "phone": "9915600148",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "Maan Colony, Sangrur"
+  },
+  "S5-022": {
+    "name": "Harsimrat Kaur Bhullar",
+    "class": "2nd",
+    "phone": "7589137563",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "Near Sibia Hospital, Sant Nagar, Sangrur"
+  },
+  "S5-023": {
+    "name": "Yuvraj Singh Bhullar",
+    "class": "2nd",
+    "phone": "7589137563",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "Near Sibia Hospital, Sant Nagar, Sangrur"
+  },
+  "S5-024": {
+    "name": "Mithil Sachdeva",
+    "class": "8th",
+    "phone": "9653382873",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "Near Agro Petrol Pump, Sangrur"
+  },
+  "S5-025": {
+    "name": "Owin Sachdeva",
+    "class": "1st",
+    "phone": "9888819434",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "Near Agro Petrol Pump, Sangrur"
+  },
+  "S5-026": {
+    "name": "Yuvan Madaan",
+    "class": "2nd",
+    "phone": "7009707201",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "Near Agro Petrol Pump, Sangrur"
+  },
+  "S5-027": {
+    "name": "Manpreet Kaur",
+    "class": "6th",
+    "phone": "7009914317",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "Near Agro Petrol Pump, Sangrur"
+  },
+  "S5-028": {
+    "name": "Ayaan",
+    "class": "3rd",
+    "phone": "7009914318",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "Near Agro Petrol Pump, Sangrur"
+  },
+  "S5-029": {
+    "name": "Jasnaaz Kaur Sappal",
+    "class": "2nd",
+    "phone": "7888793698",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "Near Agro Petrol Pump, Sangrur"
+  },
+  "S5-030": {
+    "name": "Gurab Singh",
+    "class": "7th",
+    "phone": "9873049969",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "S.S.T. Nagar, Sangrur"
+  },
+  "S5-031": {
+    "name": "Abhijot Singh",
+    "class": "5th",
+    "phone": "9729068513",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "Sant Attar Singh Gurudwara Sahib, Sangrur"
+  },
+  "S5-032": {
+    "name": "Dilshaan Singh",
+    "class": "7th",
+    "phone": "7087485105",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "Galli No. 4, Ward No. 12, Sant Nagar, Sangrur"
+  },
+  "S5-033": {
+    "name": "Mansirat Kaur",
+    "class": "7th",
+    "phone": "7087485105",
+    "busId": 5,
+    "routeId": "5S",
+    "stop": "sangrur",
+    "address": "Galli No. 4, Ward No. 12, Sant Nagar, Sangrur"
+  },
+  "B6-001": {
+    "name": "Gurnaaz Kaur Gill",
+    "class": "Nursery",
+    "phone": "7888585989",
+    "busId": 6,
+    "routeId": "6",
+    "stop": "sangrur",
+    "address": "Opposite Prem Filling Station, Sangrur"
+  },
+  "B6-002": {
+    "name": "Naman Bansal",
+    "class": "LKG",
+    "phone": "9468111699",
+    "busId": 6,
+    "routeId": "6",
+    "stop": "sangrur",
+    "address": "Near Delhi Hospital, Sangrur"
+  },
+  "B6-003": {
+    "name": "Divyansh Jindal",
+    "class": "UKG",
+    "phone": "8699335396",
+    "busId": 6,
+    "routeId": "6",
+    "stop": "sangrur",
+    "address": "Sangrur, Near Sarvhitkari School, Sangrur"
+  },
+  "B6-004": {
+    "name": "Navish Garg",
+    "class": "Nursery",
+    "phone": "9464606068",
+    "busId": 6,
+    "routeId": "6",
+    "stop": "sangrur",
+    "address": "Near 17 Sec, Sangrur"
+  },
+  "B6-005": {
+    "name": "Bhuvika",
+    "class": "LKG",
+    "phone": "8847539245",
+    "busId": 6,
+    "routeId": "6",
+    "stop": "sangrur",
+    "address": "Shivam Colony, Sangrur"
+  },
+  "B6-006": {
+    "name": "Natiksha",
+    "class": "LKG",
+    "phone": "8847539246",
+    "busId": 6,
+    "routeId": "6",
+    "stop": "sangrur",
+    "address": "Shivam Colony, Sangrur"
+  },
+  "B6-007": {
+    "name": "Dhruv Garg",
+    "class": "Nursery",
+    "phone": "9888366948",
+    "busId": 6,
+    "routeId": "6",
+    "stop": "sangrur",
+    "address": "Opposite CL Tower, Sangrur"
+  },
+  "B6-008": {
+    "name": "Randeep Singh",
+    "class": "Nursery",
+    "phone": "9763120001",
+    "busId": 6,
+    "routeId": "6",
+    "stop": "sangrur",
+    "address": "Near CL Tower, Sangrur"
+  },
+  "B6-009": {
+    "name": "Natali Bindal",
+    "class": "UKG",
+    "phone": "8559048782",
+    "busId": 6,
+    "routeId": "6",
+    "stop": "sangrur",
+    "address": "Bsnl park, Nabha Gate, Sangrur"
+  },
+  "B6-010": {
+    "name": "Navisha Bindal",
+    "class": "UKG",
+    "phone": "8559048782",
+    "busId": 6,
+    "routeId": "6",
+    "stop": "sangrur",
+    "address": "Bsnl park, Nabha Gate, Sangrur"
+  },
+  "B6-011": {
+    "name": "Ravnoor",
+    "class": "Nursery",
+    "phone": "9646854800",
+    "busId": 6,
+    "routeId": "6",
+    "stop": "sangrur",
+    "address": "St. No. 2, Guru Nanak Colony, Sangrur"
+  },
+  "B6-012": {
+    "name": "Anaya",
+    "class": "LKG",
+    "phone": "8660528413",
+    "busId": 6,
+    "routeId": "6",
+    "stop": "sangrur",
+    "address": "Gali No. 3, Prem Basti, Sangrur"
+  },
+  "B6-013": {
+    "name": "Bhavya Aggarwal",
+    "class": "LKG",
+    "phone": "9815189892",
+    "busId": 6,
+    "routeId": "6",
+    "stop": "sangrur",
+    "address": "Prem Basti, Sangrur"
+  },
+  "B6-014": {
+    "name": "Khanak Singla",
+    "class": "Nursery",
+    "phone": "8195961996",
+    "busId": 6,
+    "routeId": "6",
+    "stop": "sangrur",
+    "address": "Near SBI Bank, Railway Chownk, Sangrur"
+  },
+  "B6-015": {
+    "name": "Parmeet Singh",
+    "class": "LKG",
+    "phone": "7888941065",
+    "busId": 6,
+    "routeId": "6",
+    "stop": "sangrur",
+    "address": "Near SBI Bank, Railway Chownk, Sangrur"
+  },
+  "B6-016": {
+    "name": "Shinaya",
+    "class": "Nursery",
+    "phone": "7696980209",
+    "busId": 6,
+    "routeId": "6",
+    "stop": "sangrur",
+    "address": "Bhagat Singh Chownk, Sangrur"
+  },
+  "B6-017": {
+    "name": "Diljot Singh",
+    "class": "Nursery",
+    "phone": "6284797716",
+    "busId": 6,
+    "routeId": "6",
+    "stop": "sangrur",
+    "address": "SSST Nagar, Sangrur"
+  },
+  "B6-018": {
+    "name": "Baani",
+    "class": "LKG",
+    "phone": "9781902130",
+    "busId": 6,
+    "routeId": "6",
+    "stop": "sangrur",
+    "address": "Captain Karam Singh Nagar, Sangrur"
+  },
+  "S6-001": {
+    "name": "Gurshabad Singh Kangra",
+    "class": "2nd",
+    "phone": "7347648952",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "Sunder Basti, Prem Filling Station, Sangrur"
+  },
+  "S6-002": {
+    "name": "Sargun Kaur",
+    "class": "1st",
+    "phone": "9877656088",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "Prem Filling Station, Sangrur"
+  },
+  "S6-003": {
+    "name": "Navrj Singh Gill",
+    "class": "1st",
+    "phone": "7888585989",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "Prem Filling Station, Sangrur"
+  },
+  "S6-004": {
+    "name": "Paramveer Singh Gill",
+    "class": "6th",
+    "phone": "8264508312",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "Prem Filling Station, Sangrur"
+  },
+  "S6-005": {
+    "name": "Arvind Singh",
+    "class": "UKG",
+    "phone": "9877834790",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "badbar",
+    "address": "Badbar, Barnala"
+  },
+  "S6-006": {
+    "name": "Bhavya Bansal",
+    "class": "6th",
+    "phone": "9468111699",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "Near Delhi Hospital, Sangrur"
+  },
+  "S6-007": {
+    "name": "Sargam",
+    "class": "1st",
+    "phone": "8847256867",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "Near Sarvhitkari School, Sangrur"
+  },
+  "S6-008": {
+    "name": "Hayansh Waliya",
+    "class": "3rd",
+    "phone": "9988016939",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "Galli No. 11, Punia Tower, Sangrur"
+  },
+  "S6-009": {
+    "name": "Gurnoor Singh",
+    "class": "4th",
+    "phone": "6280422460",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "Gali No. 5, Shivam Colony, Sangrur"
+  },
+  "S6-010": {
+    "name": "Trivesh Kwatra",
+    "class": "7th",
+    "phone": "7814742203",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "Gali No. 5, Shivam Colony, Sangrur"
+  },
+  "S6-011": {
+    "name": "Dania Kwatra",
+    "class": "1st",
+    "phone": "7814742203",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "Gali No. 5, Shivam Colony, Sangrur"
+  },
+  "S6-012": {
+    "name": "Rohan Chutani",
+    "class": "3rd",
+    "phone": "6280338598",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "Gali No. 5, Shivam Colony, Sangrur"
+  },
+  "S6-013": {
+    "name": "Anshjot Singh",
+    "class": "4th",
+    "phone": "9729068513",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "Near Chintpurni Mata Mandir, Sangrur"
+  },
+  "S6-014": {
+    "name": "Bhuvi",
+    "class": "4th",
+    "phone": "9041472270",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "Near CL Tower, Sangrur"
+  },
+  "S6-015": {
+    "name": "Sehajnoor Kaur",
+    "class": "7th",
+    "phone": "9877064708",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "Near CL Tower, Sangrur"
+  },
+  "S6-016": {
+    "name": "Devansh Mittal",
+    "class": "4th",
+    "phone": "8427758603",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "BSNL Park, Nabha Gate, Sangrur"
+  },
+  "S6-017": {
+    "name": "Molisha Garg",
+    "class": "1st",
+    "phone": "9877064708",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "Near BSNL Park, Sangrur"
+  },
+  "S6-018": {
+    "name": "Saumil",
+    "class": "2nd",
+    "phone": "8699204666",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "Labour Chownk, Nabha Gate, Sangrur"
+  },
+  "S6-019": {
+    "name": "Jigyansha",
+    "class": "7th",
+    "phone": "9855531196",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "BSNL Park, Nabha Gate, Sangrur"
+  },
+  "S6-020": {
+    "name": "Maneya",
+    "class": "1st",
+    "phone": "9855531197",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "BSNL Park, Nabha Gate, Sangrur"
+  },
+  "S6-021": {
+    "name": "Avika",
+    "class": "5th",
+    "phone": "8727915544",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "Near Sarvhitkari School, Sangrur"
+  },
+  "S6-022": {
+    "name": "Aradiya",
+    "class": "8th",
+    "phone": "8727915545",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "Near Sarvhitkari School, Sangrur"
+  },
+  "S6-023": {
+    "name": "Bhavik Kumar Jain",
+    "class": "4th",
+    "phone": "948800112",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "H.No. 432C, St. No. 3 Guru Nanak Colony, Sangrur"
+  },
+  "S6-024": {
+    "name": "Piyanshi Garg",
+    "class": "2nd",
+    "phone": "9888345114",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "Prem Basti, Sangrur"
+  },
+  "S6-025": {
+    "name": "Naman Garg",
+    "class": "4th",
+    "phone": "9888345114",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "Prem Basti, Sangrur"
+  },
+  "S6-026": {
+    "name": "Aradhya",
+    "class": "3rd",
+    "phone": "8360403835",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "#50, Street No. 12, Prem Basti, Sangrur"
+  },
+  "S6-027": {
+    "name": "Reyansh Kansal",
+    "class": "2nd",
+    "phone": "9216455460",
+    "busId": 6,
+    "routeId": "6S",
+    "stop": "sangrur",
+    "address": "Near Bhagat Singh Chownk, Sangrur"
+  },
+  "S7-001": {
+    "name": "Gurleen Kaur",
+    "class": "3rd",
+    "phone": "7837967740",
+    "busId": 7,
+    "routeId": "7S",
+    "stop": "sangrur",
+    "address": "Near Dharm Arth Langar, Sangrur"
+  },
+  "S7-002": {
+    "name": "Sukhman Singh",
+    "class": "UKG",
+    "phone": "7837967740",
+    "busId": 7,
+    "routeId": "7S",
+    "stop": "sangrur",
+    "address": "Near Dharm Arth Langar, Sangrur"
+  },
+  "S7-003": {
+    "name": "Anmol Garg",
+    "class": "3rd",
+    "phone": "9464696521",
+    "busId": 7,
+    "routeId": "7S",
+    "stop": "sangrur",
+    "address": "Sangrur, Near Chunni Lal Di Hatti, Sangrur"
+  },
+  "S7-004": {
+    "name": "Armaan Garg",
+    "class": "6th",
+    "phone": "9464416725",
+    "busId": 7,
+    "routeId": "7S",
+    "stop": "sangrur",
+    "address": "Sangrur, Near Chunni Lal Di Hatti, Sangrur"
+  },
+  "S7-005": {
+    "name": "Kamakshi",
+    "class": "7th",
+    "phone": "9463881149",
+    "busId": 7,
+    "routeId": "7S",
+    "stop": "sangrur",
+    "address": "#224, Chaudrian Wali Gali, Sadar Bazar, Sangrur"
+  },
+  "S7-006": {
+    "name": "Simeranjeet Kaur",
+    "class": "7th",
+    "phone": "7814346306",
+    "busId": 7,
+    "routeId": "7S",
+    "stop": "sangrur",
+    "address": "Near Surinder Di Hatti, Sunami Gate, Sangrur"
+  },
+  "S7-007": {
+    "name": "Harshit Kumar",
+    "class": "7th",
+    "phone": "8872210046",
+    "busId": 7,
+    "routeId": "7S",
+    "stop": "sangrur",
+    "address": "Near Surinder Di Hatti, Sunami Gate, Sangrur"
+  },
+  "S7-008": {
+    "name": "Taranveer Singh",
+    "class": "7th",
+    "phone": "9915476883",
+    "busId": 7,
+    "routeId": "7S",
+    "stop": "sangrur",
+    "address": "Near Surinder Di Hatti, Sunami Gate, Sangrur"
+  },
+  "S7-009": {
+    "name": "Tridham Jindal",
+    "class": "3rd",
+    "phone": "9803877171",
+    "busId": 7,
+    "routeId": "7S",
+    "stop": "sangrur",
+    "address": "Near BSNL Exchange, Sangrur"
+  },
+  "S7-010": {
+    "name": "Rimjim",
+    "class": "2nd",
+    "phone": "7814707119",
+    "busId": 7,
+    "routeId": "7S",
+    "stop": "sangrur",
+    "address": "Partap Nagar, Sangrur"
+  },
+  "S7-011": {
+    "name": "Navya",
+    "class": "7th",
+    "phone": "7814707120",
+    "busId": 7,
+    "routeId": "7S",
+    "stop": "sangrur",
+    "address": "Partap Nagar, Sangrur"
+  },
+  "S7-012": {
+    "name": "Nimerdeep Singh",
+    "class": "4th",
+    "phone": "6239644308",
+    "busId": 7,
+    "routeId": "7S",
+    "stop": "sangrur",
+    "address": "Sangrur"
+  },
+  "S7-013": {
+    "name": "Gurleen Kaur (II)",
+    "class": "1st",
+    "phone": "6239644308",
+    "busId": 7,
+    "routeId": "7S",
+    "stop": "sangrur",
+    "address": "#224, Dr. Ambedkar Nagar, Sangrur"
+  },
+  "S7-014": {
+    "name": "Jessica Rana",
+    "class": "2nd",
+    "phone": "7009177382",
+    "busId": 7,
+    "routeId": "7S",
+    "stop": "sangrur",
+    "address": "Sangrur"
+  },
+  "S7-015": {
+    "name": "Parmeet Singh",
+    "class": "1st",
+    "phone": "7837942039",
+    "busId": 7,
+    "routeId": "7S",
+    "stop": "sangrur",
+    "address": "Sangrur"
+  },
+  "S7-016": {
+    "name": "Mansh Malhotra",
+    "class": "7th",
+    "phone": "9780162108",
+    "busId": 7,
+    "routeId": "7S",
+    "stop": "sangrur",
+    "address": "Back Side Sahini Cycle Store, Sangrur"
+  },
+  "S7-017": {
+    "name": "Mahi",
+    "class": "3rd",
+    "phone": "6283240237",
+    "busId": 7,
+    "routeId": "7S",
+    "stop": "sangrur",
+    "address": "Gali No.11, Punia Tower, Sangrur"
+  },
+  "S7-018": {
+    "name": "Hitansh Khurana",
+    "class": "3rd",
+    "phone": "8847281003",
+    "busId": 7,
+    "routeId": "7S",
+    "stop": "sangrur",
+    "address": "Near Agro Petrol Pump, Sangrur"
+  },
+  "S7-019": {
+    "name": "Dhanika Sharma",
+    "class": "2nd",
+    "phone": "7986915569",
+    "busId": 7,
+    "routeId": "7S",
+    "stop": "sangrur",
+    "address": "Near Fire Brigade, Uppli Road, Sangrur"
+  },
+  "S7-020": {
+    "name": "Anivesha Bansal",
+    "class": "8th",
+    "phone": "9878722298",
+    "busId": 7,
+    "routeId": "7S",
+    "stop": "sangrur",
+    "address": "Near Fire Brigade, Uppli Road, Sangrur"
+  },
+  "S7-021": {
+    "name": "Naman Sharma",
+    "class": "8th",
+    "phone": "7696431434",
+    "busId": 7,
+    "routeId": "7S",
+    "stop": "sangrur",
+    "address": "Near Fire Brigade, Uppli Road, Sangrur"
+  },
+  "S7-022": {
+    "name": "Heerans Garg",
+    "class": "8th",
+    "phone": "7986964616",
+    "busId": 7,
+    "routeId": "7S",
+    "stop": "sangrur",
+    "address": "Captan Karam Singh Nagar, Sangrur"
+  },
+  "S7-023": {
+    "name": "Sahibdeep Singh",
+    "class": "6th",
+    "phone": "9872948791",
+    "busId": 7,
+    "routeId": "7S",
+    "stop": "sangrur",
+    "address": "Captan Karam Singh Nagar, Sangrur"
+  },
+  "S7-024": {
+    "name": "Chanpreet Kaur",
+    "class": "1st",
+    "phone": "8968300502",
+    "busId": 7,
+    "routeId": "7S",
+    "stop": "kanoi",
+    "address": "Vill Kanoi, Sangrur"
+  }
 }

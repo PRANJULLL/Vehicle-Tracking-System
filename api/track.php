@@ -36,26 +36,81 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-$input = json_decode(file_get_contents('php://input'), true);
-$studentId = isset($input['student_id']) ? trim((string) $input['student_id']) : '';
-
-if ($studentId === '') {
-    http_response_code(400);
-    echo json_encode(['error' => 'student_id is required']);
-    exit;
-}
+$input       = json_decode(file_get_contents('php://input'), true);
+$studentId   = isset($input['student_id'])   ? trim((string) $input['student_id'])   : '';
+$studentName = isset($input['student_name']) ? trim((string) $input['student_name']) : '';
+$classFilter = isset($input['class'])        ? trim((string) $input['class'])        : '';
 
 $studentsPath = __DIR__ . '/../src/students.json';
 $students = json_decode(file_get_contents($studentsPath), true) ?? [];
 
-$key = strtoupper($studentId);
-if (!isset($students[$key])) {
-    http_response_code(404);
-    echo json_encode(['error' => 'No student found with this ID']);
-    exit;
+$student = null;
+$key = null;
+
+// 1. Direct ID lookup if student_id is provided
+if ($studentId !== '') {
+    $lookupKey = strtoupper($studentId);
+    if (isset($students[$lookupKey])) {
+        $key = $lookupKey;
+        $student = $students[$lookupKey];
+    } else {
+        // Fallback: If student_id input was actually a student name
+        $studentName = $studentId;
+    }
 }
 
-$student = $students[$key];
+// 2. Name & Class search
+if ($student === null && $studentName !== '') {
+    $matches = [];
+    $nameLower  = strtolower($studentName);
+    $classLower = strtolower($classFilter);
+
+    foreach ($students as $sId => $sData) {
+        $sNameLower  = strtolower($sData['name']);
+        $sClassLower = strtolower($sData['class'] ?? '');
+
+        if (strpos($sNameLower, $nameLower) !== false || strtolower($sId) === $nameLower) {
+            if ($classLower !== '' && $classLower !== 'all') {
+                if ($sClassLower !== $classLower) {
+                    continue;
+                }
+            }
+            $matches[$sId] = $sData;
+        }
+    }
+
+    if (count($matches) === 1) {
+        $key = array_key_first($matches);
+        $student = $matches[$key];
+    } else if (count($matches) > 1) {
+        // Multiple students matched! Return options list for parent selection
+        $resultList = [];
+        foreach ($matches as $mId => $mData) {
+            $resultList[] = [
+                'id'      => $mId,
+                'name'    => $mData['name'],
+                'class'   => $mData['class'] ?? '',
+                'address' => $mData['address'] ?? '',
+                'stop'    => $mData['stop'] ?? '',
+            ];
+        }
+        echo json_encode([
+            'multipleMatches' => true,
+            'students'        => $resultList
+        ]);
+        exit;
+    } else {
+        http_response_code(404);
+        echo json_encode(['error' => 'No student found matching this name and class.']);
+        exit;
+    }
+}
+
+if ($student === null) {
+    http_response_code(400);
+    echo json_encode(['error' => 'Please enter a student name or ID to track.']);
+    exit;
+}
 
 $bus = getBusById((int) $student['busId']);
 if (!$bus) {
@@ -89,11 +144,113 @@ try {
         }
     }
 
+    // ── Load route info ───────────────────────────────────────────────────────
+    $routeInfo = null;
+    $checkpointsData = null;
+    $routesPath = __DIR__ . '/../src/routes.json';
+    if (file_exists($routesPath)) {
+        $allRoutes  = json_decode(file_get_contents($routesPath), true) ?? [];
+        // Senior students have a routeId field (e.g. "1S"); junior students fall back to busId
+        $routeIdStr = isset($student['routeId']) ? $student['routeId'] : (string) $student['busId'];
+        if (isset($allRoutes[$routeIdStr])) {
+            $routeInfo = $allRoutes[$routeIdStr];
+        }
+    }
+
+    // ── Find nearest checkpoint to the bus ─────────────────────────────────
+    $nearestCheckpoint = null;
+    if ($busLat !== null && $busLng !== null && file_exists(__DIR__ . '/../src/checkpoints.json')) {
+        $checkpointsData = json_decode(file_get_contents(__DIR__ . '/../src/checkpoints.json'), true) ?? [];
+        $minDist = null;
+        $routeStopIds = $routeInfo ? ($routeInfo['stops'] ?? []) : [];
+
+        foreach ($checkpointsData as $cp) {
+            if (($cp['status'] ?? 'Active') !== 'Active') continue;
+            if ($cp['lat'] === null || $cp['lng'] === null) continue;
+            // Only search stops on this bus route
+            if (!empty($routeStopIds) && !in_array($cp['id'], $routeStopIds)) continue;
+
+            $dist = haversineMeters($busLat, $busLng, (float)$cp['lat'], (float)$cp['lng']);
+            if ($minDist === null || $dist < $minDist) {
+                $minDist = $dist;
+                $nearestCheckpoint = [
+                    'id'             => $cp['id'],
+                    'name'           => $cp['name'],
+                    'lat'            => (float)$cp['lat'],
+                    'lng'            => (float)$cp['lng'],
+                    'fee'            => $cp['fee'],
+                    'landmark'       => $cp['landmark'],
+                    'distanceMeters' => (int)round($dist),
+                    'distanceKm'     => round($dist / 1000, 2),
+                ];
+            }
+        }
+    }
+
+    // ── Get student's assigned stop info ─────────────────────────────────────
+    $studentStop = null;
+    $studentStopId = $student['stop'] ?? null;
+    if ($studentStopId && file_exists(__DIR__ . '/../src/checkpoints.json')) {
+        $checkpointsData = $checkpointsData ?? json_decode(file_get_contents(__DIR__ . '/../src/checkpoints.json'), true) ?? [];
+        foreach ($checkpointsData as $cp) {
+            if ($cp['id'] === $studentStopId) {
+                $studentStop = [
+                    'id'       => $cp['id'],
+                    'name'     => $cp['name'],
+                    'lat'      => $cp['lat'],
+                    'lng'      => $cp['lng'],
+                    'fee'      => $cp['fee'],
+                    'landmark' => $cp['landmark'],
+                ];
+                break;
+            }
+        }
+    }
+
+    // ── Build full route stops list with coordinates for map path ─────────────
+    $routeStops = [];
+    $checkpointsData = $checkpointsData ?? json_decode(file_get_contents(__DIR__ . '/../src/checkpoints.json'), true) ?? [];
+    $routeStopIds = $routeInfo ? ($routeInfo['stops'] ?? []) : [];
+    
+    foreach ($routeStopIds as $idx => $stopId) {
+        foreach ($checkpointsData as $cp) {
+            if ($cp['id'] === $stopId) {
+                $routeStops[] = [
+                    'seq'      => $idx + 1,
+                    'id'       => $cp['id'],
+                    'name'     => $cp['name'],
+                    'lat'      => $cp['lat'] !== null ? (float)$cp['lat'] : null,
+                    'lng'      => $cp['lng'] !== null ? (float)$cp['lng'] : null,
+                    'landmark' => $cp['landmark'],
+                    'fee'      => $cp['fee'],
+                ];
+                break;
+            }
+        }
+    }
+
     echo json_encode([
-        'student'   => ['id' => $key, 'name' => $student['name']],
-        'bus'       => ['vehicleNo' => $bus['vehicleNo']],
-        'location'  => $location,
-        'busStatus' => $busStatus,
+        'student' => [
+            'id'      => $key,
+            'name'    => $student['name'],
+            'class'   => $student['class']   ?? null,
+            'address' => $student['address'] ?? null,
+            'stop'    => $studentStop,
+        ],
+        'bus' => [
+            'vehicleNo'  => $bus['vehicleNo'],
+            'routeName'  => $routeInfo['name']       ?? null,
+            'routeLabel' => $routeInfo['routeLabel'] ?? null,
+            'stops'      => $routeStops,
+        ],
+        'school' => [
+            'name' => 'Maple International School, Sangrur',
+            'lat'  => SCHOOL_LAT,
+            'lng'  => SCHOOL_LNG,
+        ],
+        'location'          => $location,
+        'busStatus'         => $busStatus,
+        'nearestCheckpoint' => $nearestCheckpoint,
     ]);
 } catch (FleetHuntException $e) {
     http_response_code(502);

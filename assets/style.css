@@ -152,6 +152,10 @@ main {
 /* =========================================================
    Search card
    ========================================================= */
+.tracking-active .search-card {
+  display: none;
+}
+
 .search-card {
   background: var(--paper-card);
   border-radius: var(--radius-lg);
@@ -168,40 +172,50 @@ main {
   color: var(--navy-900);
 }
 
-.search-row {
+.search-fields {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  position: relative;
 }
 
-.search-row input {
-  flex: 1 1 160px;
+.input-wrap {
+  flex: 2 1 200px;
+  position: relative;
   min-width: 0;
-  padding: 14px 16px;
+}
+
+.search-fields input {
+  width: 100%;
+  padding: 13px 16px;
   border: 2px solid var(--line);
   border-radius: var(--radius-md);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--navy-900);
   background: var(--paper);
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
 }
 
-.search-row input::placeholder {
-  text-transform: none;
-  font-weight: 400;
-  color: #9aa5b1;
-  letter-spacing: normal;
+.search-fields select {
+  flex: 1 1 120px;
+  padding: 13px 14px;
+  border: 2px solid var(--line);
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy-900);
+  background: var(--paper);
+  cursor: pointer;
 }
 
-.search-row input:focus {
+.search-fields input:focus,
+.search-fields select:focus {
   outline: none;
-  border-color: var(--bus-yellow-dark);
+  border-color: var(--navy-700);
   background: #fff;
 }
 
-.search-row button {
+.search-fields button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -209,31 +223,72 @@ main {
   background: var(--bus-yellow);
   color: var(--navy-900);
   border: none;
-  padding: 14px 22px;
+  padding: 13px 20px;
   border-radius: var(--radius-md);
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
   cursor: pointer;
-  min-height: 52px;
+  min-height: 48px;
   transition: transform 0.06s ease, background 0.15s ease;
 }
 
-.search-row button:hover {
+.search-fields button:hover {
   background: var(--bus-yellow-dark);
 }
 
-.search-row button:active {
+.search-fields button:active {
   transform: scale(0.97);
 }
 
-.btn-icon {
-  font-size: 17px;
+/* Autocomplete suggestion popup menu */
+.search-results {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: #ffffff;
+  border: 2px solid var(--navy-900);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 25px rgba(22, 39, 60, 0.25);
+  max-height: 240px;
+  overflow-y: auto;
 }
 
-.search-hint {
-  margin: 10px 2px 0;
-  font-size: 13.5px;
+.suggestion-item {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item:hover {
+  background: var(--paper);
+}
+
+.sugg-name {
+  font-size: 15px;
+  color: var(--navy-900);
+}
+
+.sugg-class {
+  font-size: 11.5px;
+  font-weight: 700;
+  background: var(--amber-bg);
+  color: #7a5206;
+  padding: 1px 8px;
+  border-radius: 999px;
+  margin-left: 6px;
+}
+
+.sugg-addr {
+  font-size: 12px;
   color: var(--ink-soft);
+  margin-top: 2px;
 }
 
 /* =========================================================
@@ -364,6 +419,94 @@ main {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
+.stop-icon-wrap {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 50%;
+  border: 2px solid var(--navy-900);
+  font-size: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.stop-icon-wrap:hover {
+  transform: scale(1.2);
+}
+
+/* Map control overlay */
+.map-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.map-control-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1.5px solid var(--navy-900);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--navy-900);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.map-control-btn.active {
+  background: var(--navy-900);
+  color: #ffffff;
+}
+
+/* Checkpoint Popup */
+.checkpoint-popup {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--ink-body);
+  padding: 2px 0;
+}
+
+.checkpoint-popup .cp-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy-900);
+  margin-bottom: 4px;
+}
+
+.checkpoint-popup .cp-landmark {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-bottom: 4px;
+}
+
+.checkpoint-popup .cp-fee {
+  font-size: 12.5px;
+  color: var(--ink-body);
+}
+
+.checkpoint-popup .cp-status {
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+.checkpoint-popup .badge-active {
+  background: var(--green-bg);
+  color: #1d6e42;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
 /* Empty state, centered over the map before a search */
 .empty-state {
   position: absolute;
@@ -405,7 +548,7 @@ main {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-float);
   padding: 10px 16px calc(env(safe-area-inset-bottom, 0px) + 12px);
-  max-height: 45%;
+  max-height: 85%;
   overflow-y: auto;
 }
 
@@ -472,7 +615,7 @@ main {
 
 .info-sheet-details {
   display: flex;
-  gap: 26px;
+  gap: 16px 12px;
   margin-top: 12px;
   padding-top: 12px;
   border-top: 1px solid var(--line);
@@ -483,6 +626,8 @@ main {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  flex: 1 1 80px;
+  min-width: 80px;
 }
 
 .info-detail-label {
@@ -497,6 +642,105 @@ main {
   font-size: 15px;
   font-weight: 700;
   color: var(--navy-900);
+}
+
+/* Class tag next to child name */
+.info-child-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--ink-soft);
+}
+
+.info-child-class {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--amber-bg);
+  color: #7a5206;
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+
+/* Your stop — highlighted value */
+.stop-highlight {
+  color: #1d6e42;
+  background: var(--green-bg);
+  border-radius: 8px;
+  padding: 2px 8px;
+  display: inline-block;
+}
+
+/* Empty state hint text */
+.empty-hint {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-top: 4px !important;
+}
+
+/* Your-stop map marker — pulsing beacon */
+.your-stop-icon-wrap {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  animation: yourStopPulse 1.6s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px rgba(45, 158, 91, 0.7));
+}
+
+@keyframes yourStopPulse {
+  0%, 100% { transform: scale(1);   filter: drop-shadow(0 0 6px rgba(45,158,91,0.7)); }
+  50%        { transform: scale(1.25); filter: drop-shadow(0 0 12px rgba(45,158,91,1)); }
+}
+
+/* Info detail — full-width rows for long values like route name */
+.info-detail.full-row {
+  flex: 1 1 100%;
+  min-width: 100%;
+}
+
+
+
+/* Bus motion status badges */
+.bus-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  background: #f1f5f9;
+  color: var(--navy-900);
+}
+
+.bus-status-badge.badge-moving {
+  background: var(--green-bg);
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.bus-status-badge.badge-stopped {
+  background: var(--amber-bg);
+  color: #854d0e;
+  border: 1px solid #fef08a;
+}
+
+.bus-status-badge.badge-at-school {
+  background: #e0f2fe;
+  color: #075985;
+  border: 1px solid #bae6fd;
+}
+
+/* Route stop sequence badge marker on map */
+.seq-icon-wrap {
+  transition: transform 0.2s ease;
+}
+.seq-icon-wrap:hover {
+  transform: scale(1.25);
 }
 
 /* =========================================================

@@ -1,0 +1,127 @@
+{
+  "1": {
+    "name": "Sunam & Chatha Nakta",
+    "routeLabel": "Sunam, Chateh Sheikhan — Junior Route",
+    "vehicleNo": "PB13BR1060",
+    "stops": [
+      "sunam",
+      "chathe_nakte"
+    ]
+  },
+  "2": {
+    "name": "Tungan & Uppli",
+    "routeLabel": "Tungan, Uppli — Junior Route",
+    "vehicleNo": "PB13BR1061",
+    "stops": [
+      "uppli",
+      "tung"
+    ]
+  },
+  "3": {
+    "name": "Bharur",
+    "routeLabel": "Bharur — Junior Route",
+    "vehicleNo": "PB13BQ6422",
+    "stops": [
+      "bharur"
+    ]
+  },
+  "4": {
+    "name": "Kammomajra, Illwal, Gagarpur, Kheri & Kular Khurd",
+    "routeLabel": "Junior Route",
+    "vehicleNo": "PB13BS5411",
+    "stops": [
+      "kammo_majra",
+      "illwal",
+      "gaggarpur",
+      "kheri",
+      "kular_khurd"
+    ]
+  },
+  "5": {
+    "name": "Sangrur & Kanoi",
+    "routeLabel": "Sangrur — Junior Route",
+    "vehicleNo": "PB13BU9679",
+    "stops": [
+      "sangrur",
+      "kanoi"
+    ]
+  },
+  "6": {
+    "name": "Sangrur (Junior)",
+    "routeLabel": "Sangrur — Junior Route",
+    "vehicleNo": "PB13BW7482",
+    "stops": [
+      "sangrur"
+    ]
+  },
+  "1S": {
+    "name": "Sunam (Senior)",
+    "routeLabel": "Sunam — Senior Route",
+    "vehicleNo": "PB13BR1060",
+    "stops": [
+      "sunam"
+    ]
+  },
+  "2S": {
+    "name": "Hareri Road, Mastuana, Badrukhan & Uppli (Senior)",
+    "routeLabel": "Senior Route",
+    "vehicleNo": "PB13BR1061",
+    "stops": [
+      "hreri_road_sangrur",
+      "police_line_sangrur",
+      "mastuana",
+      "badrukhan",
+      "uppli"
+    ]
+  },
+  "3S": {
+    "name": "Chatha Nakta, Bharur & Tung (Senior)",
+    "routeLabel": "Chatha Nakta, Bharur — Senior Route",
+    "vehicleNo": "PB13BQ6422",
+    "stops": [
+      "chathe_nakte",
+      "bharur",
+      "tung"
+    ]
+  },
+  "4S": {
+    "name": "Mehlan, Illwal, Kamomajra, Kheri & Kular Khurd (Senior)",
+    "routeLabel": "Senior Route",
+    "vehicleNo": "PB13BS5411",
+    "stops": [
+      "mehlan",
+      "illwal",
+      "kammo_majra",
+      "kheri",
+      "kular_khurd"
+    ]
+  },
+  "5S": {
+    "name": "Mangwal, Jhaur Majra & Sangrur (Senior)",
+    "routeLabel": "Sangrur — Senior Route",
+    "vehicleNo": "PB13BU9679",
+    "stops": [
+      "mangwal",
+      "jhaur_majra",
+      "sangrur"
+    ]
+  },
+  "6S": {
+    "name": "Sangrur & Badbar (Senior)",
+    "routeLabel": "Sangrur, Badbar — Senior Route",
+    "vehicleNo": "PB13BW7482",
+    "stops": [
+      "sangrur",
+      "badbar"
+    ]
+  },
+  "7S": {
+    "name": "Sangrur & Kanoi (Senior)",
+    "routeLabel": "Sangrur — Senior Route",
+    "vehicleNo": "PB13BX0453",
+    "stops": [
+      "sangrur",
+      "kanoi"
+    ]
+  }
+}

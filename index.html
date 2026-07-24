@@ -7,8 +7,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta name="mobile-web-app-capable" content="yes" />
-<title>Where's My Bus — School Bus Tracker</title>
-<meta name="description" content="See your child's school bus on a map in real time." />
+<title>Maple Bus Tracker — Maple International School, Sangrur</title>
+<meta name="description" content="Track your child's school bus live on the map. Maple International School, Sangrur." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,8 +27,8 @@
     <div class="topbar-inner">
       <span class="topbar-icon" aria-hidden="true">🚌</span>
       <div class="topbar-text">
-        <h1>Where's My Bus</h1>
-        <p>Track your child's school bus, live</p>
+        <h1>Maple Bus Tracker</h1>
+        <p>Maple International School, Sangrur — Live Bus Tracking</p>
       </div>
     </div>
   </header>
@@ -39,22 +39,39 @@
 
     <!-- Search card -->
     <section class="search-card" aria-label="Find your child's bus">
-      <label for="studentId">Your child's Student ID</label>
-      <div class="search-row">
-        <input
-          id="studentId"
-          type="text"
-          inputmode="text"
-          placeholder="e.g. MIS-32"
-          autocomplete="off"
-          autocapitalize="characters"
-        />
+      <label for="studentName">Search your child's Bus</label>
+      <div class="search-fields">
+        <div class="input-wrap">
+          <input
+            id="studentName"
+            type="text"
+            placeholder="Student Name (e.g. Samarjot, Gurleen)"
+            autocomplete="off"
+          />
+          <!-- Autocomplete Suggestions List -->
+          <div id="searchResults" class="search-results hidden"></div>
+        </div>
+        <select id="studentClass" title="Select Class">
+          <option value="">All Classes</option>
+          <option value="Play Grp">Play Group</option>
+          <option value="Nursery">Nursery</option>
+          <option value="LKG">LKG</option>
+          <option value="UKG">UKG</option>
+          <option value="1st">1st Class</option>
+          <option value="2nd">2nd Class</option>
+          <option value="3rd">3rd Class</option>
+          <option value="4th">4th Class</option>
+          <option value="5th">5th Class</option>
+          <option value="6th">6th Class</option>
+          <option value="7th">7th Class</option>
+          <option value="8th">8th Class</option>
+        </select>
         <button id="trackBtn" type="button">
           <span class="btn-icon" aria-hidden="true">🔍</span>
           <span>Track Bus</span>
         </button>
       </div>
-      <p class="search-hint">You'll find this ID on the card given by your school.</p>
+      <p class="search-hint">💡 Enter your child's name and select their class to track their bus live.</p>
     </section>
 
     <!-- Status banner: shows loading / errors / nearby alerts -->
@@ -67,11 +84,19 @@
     <div class="map-wrap">
       <div id="map"></div>
 
+      <!-- Map controls overlay -->
+      <div class="map-controls">
+        <button id="toggleStopsBtn" type="button" class="map-control-btn active" title="Toggle Bus Stops on Map">
+          <span>🚏</span> <span id="stopsCountLabel">Bus Stops</span>
+        </button>
+      </div>
+
       <!-- Empty state shown before a search -->
       <div id="emptyState" class="empty-state">
-        <span class="empty-state-icon" aria-hidden="true">🚏</span>
-        <p><strong>No bus selected yet</strong></p>
-        <p>Enter your child's Student ID above and tap<br><strong>Track Bus</strong> to see it on the map.</p>
+        <span class="empty-state-icon" aria-hidden="true">🚌</span>
+        <p><strong>Search your child's Bus</strong></p>
+        <p>Enter your child's name and select their class above, then tap <strong>Track Bus</strong><br>to see their bus live on the map.</p>
+        <p class="empty-hint">🚏 Bus stops are shown as pins on the map</p>
       </div>
 
       <!-- Bottom info sheet, shown once a bus is being tracked -->
@@ -79,21 +104,35 @@
         <div class="info-sheet-handle" aria-hidden="true"></div>
         <div class="info-sheet-top">
           <div class="info-child">
+            <span class="info-child-label">Tracking</span>
             <span id="studentName" class="info-child-name">—</span>
+            <span id="studentClass" class="info-child-class"></span>
           </div>
-          <button id="newSearchBtn" type="button" class="link-btn">Track a different child</button>
+          <button id="newSearchBtn" type="button" class="link-btn">Search again</button>
         </div>
         <div class="info-sheet-details">
           <div class="info-detail">
-            <span class="info-detail-label">Bus number</span>
+            <span class="info-detail-label">🚌 Bus No.</span>
             <span id="busNo" class="info-detail-value">—</span>
           </div>
           <div class="info-detail">
-            <span class="info-detail-label">Bus status</span>
+            <span class="info-detail-label">🛣️ Route</span>
+            <span id="routeNameEl" class="info-detail-value">—</span>
+          </div>
+          <div class="info-detail">
+            <span class="info-detail-label">📍 Your Stop</span>
+            <span id="yourStopEl" class="info-detail-value stop-highlight">—</span>
+          </div>
+          <div class="info-detail">
+            <span class="info-detail-label">🚦 Bus Status</span>
             <span id="busStatusBadge" class="bus-status-badge">—</span>
           </div>
           <div class="info-detail">
-            <span class="info-detail-label">Last updated</span>
+            <span class="info-detail-label">🚏 Nearest Stop</span>
+            <span id="nearestStopEl" class="info-detail-value">—</span>
+          </div>
+          <div class="info-detail">
+            <span class="info-detail-label">🕐 Last updated</span>
             <span id="lastUpdated" class="info-detail-value">—</span>
           </div>
         </div>
@@ -103,7 +142,7 @@
   </main>
 
   <footer class="app-footer">
-    <p>If the bus doesn't appear, please contact your school office.</p>
+    <p>Maple International School, Sangrur &nbsp;|&nbsp; If the bus doesn't appear, please contact the school office.</p>
   </footer>
 
 </div>
