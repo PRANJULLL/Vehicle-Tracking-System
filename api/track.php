@@ -120,10 +120,23 @@ if (!$bus) {
 }
 
 try {
-    // Serve from cache if fresh, else hit FleetHunt
+    // ── Load route info ───────────────────────────────────────────────────────
+    $routeInfo = null;
+    $checkpointsData = null;
+    $routesPath = __DIR__ . '/../src/routes.json';
+    if (file_exists($routesPath)) {
+        $allRoutes  = json_decode(file_get_contents($routesPath), true) ?? [];
+        // Senior students have a routeId field (e.g. "1S"); junior students fall back to busId
+        $routeIdStr = isset($student['routeId']) ? $student['routeId'] : (string) $student['busId'];
+        if (isset($allRoutes[$routeIdStr])) {
+            $routeInfo = $allRoutes[$routeIdStr];
+        }
+    }
+
+    // Serve from cache if fresh, else hit FleetHunt / Simulator
     $location = cacheGet($bus['vehicleNo']);
     if ($location === null) {
-        $location = getBusLocation($bus);
+        $location = getBusLocation($bus, $routeInfo);
         cacheSet($bus['vehicleNo'], $location);
     }
 
@@ -141,19 +154,6 @@ try {
             $busStatus = ($distToSchool <= SCHOOL_RADIUS_M) ? 'at_school' : 'stopped';
         } else {
             $busStatus = 'stopped';
-        }
-    }
-
-    // ── Load route info ───────────────────────────────────────────────────────
-    $routeInfo = null;
-    $checkpointsData = null;
-    $routesPath = __DIR__ . '/../src/routes.json';
-    if (file_exists($routesPath)) {
-        $allRoutes  = json_decode(file_get_contents($routesPath), true) ?? [];
-        // Senior students have a routeId field (e.g. "1S"); junior students fall back to busId
-        $routeIdStr = isset($student['routeId']) ? $student['routeId'] : (string) $student['busId'];
-        if (isset($allRoutes[$routeIdStr])) {
-            $routeInfo = $allRoutes[$routeIdStr];
         }
     }
 

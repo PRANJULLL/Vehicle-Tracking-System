@@ -14,8 +14,10 @@ let currentTrackingTarget = null; // Currently tracked student target { studentI
 let checkpointsLayerGroup = L.layerGroup().addTo(map);
 let checkpointsData = [];
 let showCheckpoints = true;
+let isFirstRouteRender = true;
+let markerAnimationAnimFrame = null;
 
-const POLL_MS = 8000; // Poll bus location every 8s
+const POLL_MS = 4000; // Poll bus location every 4s for real-time tracking
 
 // --- Element references ---
 const studentNameInput   = document.getElementById('studentName');
@@ -28,11 +30,12 @@ const statusBanner = document.getElementById('statusBanner');
 const statusIcon   = document.getElementById('statusIcon');
 const statusText   = document.getElementById('statusText');
 
-const emptyState      = document.getElementById('emptyState');
-const infoSheet       = document.getElementById('infoSheet');
-const studentNameEl   = document.getElementById('studentNameEl') || document.getElementById('studentName');
-const studentClassEl  = document.getElementById('studentClassEl');
-const busStatusBadge  = document.getElementById('busStatusBadge');
+const emptyState       = document.getElementById('emptyState');
+const infoSheet        = document.getElementById('infoSheet');
+const studentNameEl    = document.getElementById('studentNameEl');
+const studentClassEl   = document.getElementById('studentClassEl');
+const studentDetailVal = document.getElementById('studentDetailVal');
+const busStatusBadge   = document.getElementById('busStatusBadge');
 const busNoEl         = document.getElementById('busNo');
 const routeNameEl     = document.getElementById('routeNameEl');
 const yourStopEl      = document.getElementById('yourStopEl');
@@ -40,6 +43,47 @@ const nearestStopEl   = document.getElementById('nearestStopEl');
 const lastUpdatedEl   = document.getElementById('lastUpdated');
 const toggleStopsBtn  = document.getElementById('toggleStopsBtn');
 const stopsCountLabel = document.getElementById('stopsCountLabel');
+
+const infoSheetHeader   = document.getElementById('infoSheetHeader');
+const minimizeBtn       = document.getElementById('minimizeBtn');
+const toggleExpandBtn   = document.getElementById('toggleExpandBtn');
+const expandBtnText     = document.getElementById('expandBtnText');
+const expandBtnIcon     = document.getElementById('expandBtnIcon');
+const recenterBusBtn    = document.getElementById('recenterBusBtn');
+const fitRouteBtn       = document.getElementById('fitRouteBtn');
+const routeTimelineList = document.getElementById('routeTimelineList');
+
+let latestBusLocation = null;
+let currentRouteBounds = [];
+
+function toggleSheetExpanded(forceState) {
+  const isExpanded = forceState !== undefined ? forceState : !infoSheet.classList.contains('expanded');
+  if (isExpanded) {
+    infoSheet.classList.remove('minimized');
+    infoSheet.classList.add('expanded');
+    if (expandBtnText) expandBtnText.textContent = 'Collapse';
+    if (expandBtnIcon) expandBtnIcon.textContent = '▼';
+    if (minimizeBtn) minimizeBtn.innerHTML = '<span>🗺️ Full Map</span>';
+  } else {
+    infoSheet.classList.remove('expanded');
+    if (expandBtnText) expandBtnText.textContent = 'Full Details';
+    if (expandBtnIcon) expandBtnIcon.textContent = '▲';
+  }
+}
+
+function toggleSheetMinimized(forceState) {
+  const isMinimized = forceState !== undefined ? forceState : !infoSheet.classList.contains('minimized');
+  if (isMinimized) {
+    infoSheet.classList.remove('expanded');
+    infoSheet.classList.add('minimized');
+    if (minimizeBtn) minimizeBtn.innerHTML = '<span>Show Details ▲</span>';
+    if (expandBtnText) expandBtnText.textContent = 'Full Details';
+    if (expandBtnIcon) expandBtnIcon.textContent = '▲';
+  } else {
+    infoSheet.classList.remove('minimized');
+    if (minimizeBtn) minimizeBtn.innerHTML = '<span>🗺️ Full Map</span>';
+  }
+}
 
 let yourStopMarker = null; // Pulsing marker on student's assigned stop
 
@@ -99,13 +143,52 @@ function distanceMeters(lat1, lng1, lat2, lng2) {
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
 
-function updateBusMarker(lat, lng) {
+function updateBusMarker(lat, lng, heading) {
   const latLng = [lat, lng];
+  latestBusLocation = latLng;
   if (!busMarker) {
     busMarker = L.marker(latLng, { icon: busIcon, zIndexOffset: 1000 }).addTo(map);
+    busMarker.on('click', () => {
+      map.panTo(latLng, { animate: true, duration: 0.8 });
+      toggleSheetExpanded(true);
+    });
   } else {
-    busMarker.setLatLng(latLng);
+    animateMarkerTo(busMarker, latLng, 3500);
   }
+
+  if (heading != null && busMarker && busMarker.getElement()) {
+    const iconWrap = busMarker.getElement().querySelector('.bus-icon-wrap');
+    if (iconWrap) {
+      iconWrap.style.transform = `rotate(${heading}deg)`;
+    }
+  }
+}
+
+function animateMarkerTo(marker, newLatLngArr, durationMs) {
+  if (markerAnimationAnimFrame) {
+    cancelAnimationFrame(markerAnimationAnimFrame);
+  }
+
+  const startLatLng = marker.getLatLng();
+  const targetLat = newLatLngArr[0];
+  const targetLng = newLatLngArr[1];
+  const startTime = performance.now();
+
+  function step(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / durationMs, 1.0);
+
+    const currentLat = startLatLng.lat + (targetLat - startLatLng.lat) * progress;
+    const currentLng = startLatLng.lng + (targetLng - startLatLng.lng) * progress;
+
+    marker.setLatLng([currentLat, currentLng]);
+
+    if (progress < 1.0) {
+      markerAnimationAnimFrame = requestAnimationFrame(step);
+    }
+  }
+
+  markerAnimationAnimFrame = requestAnimationFrame(step);
 }
 
 /**
@@ -175,8 +258,10 @@ function drawBusRoutePath(stops, school, busLat, busLng) {
     routePolylineGroup.addLayer(mainLine);
   }
 
-  if (allBounds.length > 0) {
+  currentRouteBounds = allBounds;
+  if (allBounds.length > 0 && isFirstRouteRender) {
     map.fitBounds(allBounds, { padding: [60, 60], maxZoom: 15 });
+    isFirstRouteRender = false;
   }
 }
 
@@ -272,6 +357,7 @@ async function fetchAndRender(target) {
 
     if (studentNameEl) studentNameEl.textContent = data.student.name;
     if (studentClassEl) studentClassEl.textContent = data.student.class ? `(${data.student.class})` : '';
+    if (studentDetailVal) studentDetailVal.textContent = data.student.class ? `${data.student.name} (${data.student.class})` : data.student.name;
     if (busNoEl) busNoEl.textContent = data.bus.vehicleNo;
     if (routeNameEl) routeNameEl.textContent = data.bus.routeName || '—';
 
@@ -312,7 +398,7 @@ async function fetchAndRender(target) {
     lastUpdatedEl.textContent = 'just now';
     startTicking();
 
-    const { lat, lng, speed } = data.location || {};
+    const { lat, lng, speed, heading } = data.location || {};
     if (lat == null || lng == null) {
       showStatus("Bus location sync in progress... Please check back shortly.", 'error');
       busStatusBadge.textContent = '—';
@@ -321,11 +407,14 @@ async function fetchAndRender(target) {
     }
 
     // Render Bus Marker & Motion Status
-    updateBusMarker(lat, lng);
+    updateBusMarker(lat, lng, heading);
     updateBusStatus(data.busStatus || 'moving', speed, data.nearestCheckpoint);
 
     // Draw Complete Bus Path & Waypoints on Map
     drawBusRoutePath(data.bus.stops, data.school, lat, lng);
+
+    // Render Full Route Timeline
+    renderRouteTimeline(data.bus.stops, data.school, data.nearestCheckpoint, data.student.stop);
 
   } catch (err) {
     console.error(err);
@@ -486,6 +575,7 @@ document.addEventListener('click', (e) => {
 
 function startPolling(target) {
   stopPolling();
+  isFirstRouteRender = true;
   showStatus('Fetching live bus location…');
   fetchAndRender(target);
   pollTimer = setInterval(() => fetchAndRender(target), POLL_MS);
@@ -500,6 +590,7 @@ function resetToSearch() {
   stopPolling();
   stopTicking();
   hideStatus();
+  if (busMarker) { map.removeLayer(busMarker); busMarker = null; }
   if (yourStopMarker) { map.removeLayer(yourStopMarker); yourStopMarker = null; }
   routePolylineGroup.clearLayers();
   infoSheet.classList.add('hidden');
@@ -526,6 +617,86 @@ studentNameInput.addEventListener('keydown', (e) => {
 });
 
 newSearchBtn.addEventListener('click', resetToSearch);
+
+if (minimizeBtn) {
+  minimizeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleSheetMinimized();
+  });
+}
+
+if (toggleExpandBtn) {
+  toggleExpandBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleSheetExpanded();
+  });
+}
+
+if (infoSheetHeader) {
+  infoSheetHeader.addEventListener('click', (e) => {
+    if (e.target.closest('#newSearchBtn') || e.target.closest('#minimizeBtn') || e.target.closest('#toggleExpandBtn')) return;
+    if (infoSheet.classList.contains('minimized')) {
+      toggleSheetMinimized(false);
+    } else {
+      toggleSheetMinimized(true);
+    }
+  });
+}
+
+if (recenterBusBtn) {
+  recenterBusBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (latestBusLocation) {
+      map.setView(latestBusLocation, 15, { animate: true });
+    }
+  });
+}
+
+if (fitRouteBtn) {
+  fitRouteBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (currentRouteBounds && currentRouteBounds.length > 0) {
+      map.fitBounds(currentRouteBounds, { padding: [60, 60], maxZoom: 15 });
+    }
+  });
+}
+
+function renderRouteTimeline(stops, school, nearestCheckpoint, studentStop) {
+  if (!routeTimelineList) return;
+  let html = '';
+
+  if (Array.isArray(stops) && stops.length > 0) {
+    stops.forEach((st, idx) => {
+      const isYourStop = studentStop && studentStop.id === st.id;
+      const isNearest = nearestCheckpoint && nearestCheckpoint.id === st.id;
+      
+      let itemClass = 'timeline-item';
+      if (isYourStop) itemClass += ' is-your-stop';
+      if (isNearest) itemClass += ' is-nearest';
+
+      html += `<div class="${itemClass}">
+        <div class="timeline-node">${idx + 1}</div>
+        <div class="timeline-content">
+          <div class="timeline-stop-name">${escapeHtml(st.name)} ${isYourStop ? '📍 <span style="color:var(--amber);font-size:12px;">(Your Child\'s Pickup Stop)</span>' : ''}</div>
+          ${st.landmark ? `<div class="timeline-stop-sub">📍 ${escapeHtml(st.landmark)}</div>` : ''}
+          ${isNearest ? `<div style="font-size:11.5px;color:var(--green);font-weight:700;margin-top:2px;">🚚 Bus is currently near this stop</div>` : ''}
+        </div>
+      </div>`;
+    });
+  }
+
+  if (school) {
+    html += `<div class="timeline-item is-school">
+      <div class="timeline-node">🏫</div>
+      <div class="timeline-content">
+        <div class="timeline-stop-name">${escapeHtml(school.name)}</div>
+        <div class="timeline-stop-sub">Destination Campus</div>
+      </div>
+    </div>`;
+  }
+
+  routeTimelineList.innerHTML = html;
+}
 
 if (toggleStopsBtn) {
   toggleStopsBtn.addEventListener('click', () => {

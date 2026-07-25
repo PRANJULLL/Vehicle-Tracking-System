@@ -101,21 +101,36 @@
 
       <!-- Bottom info sheet, shown once a bus is being tracked -->
       <section id="infoSheet" class="info-sheet hidden" aria-label="Bus details">
-        <div class="info-sheet-handle" aria-hidden="true"></div>
-        <div class="info-sheet-top">
-          <div class="info-child">
-            <span class="info-child-label">Tracking</span>
-            <span id="studentName" class="info-child-name">—</span>
-            <span id="studentClass" class="info-child-class"></span>
+        <div id="infoSheetHeader" class="info-sheet-header" title="Click to view full tracking system details">
+          <div class="info-sheet-handle" aria-hidden="true"></div>
+          <div class="info-sheet-top">
+            <div class="info-child">
+              <span class="info-child-label">TRACKING</span>
+              <span id="studentNameEl" class="info-child-name">—</span>
+              <span id="studentClassEl" class="info-child-class"></span>
+            </div>
+            <div class="info-top-actions">
+              <button id="minimizeBtn" type="button" class="minimize-btn" title="Minimize card to see full map">
+                <span>🗺️ Full Map</span>
+              </button>
+              <button id="toggleExpandBtn" type="button" class="expand-btn" aria-label="Toggle full tracking system view">
+                <span id="expandBtnText">Full Details</span> <span id="expandBtnIcon">▲</span>
+              </button>
+              <button id="newSearchBtn" type="button" class="link-btn">Search again</button>
+            </div>
           </div>
-          <button id="newSearchBtn" type="button" class="link-btn">Search again</button>
         </div>
+
         <div class="info-sheet-details">
+          <div class="info-detail">
+            <span class="info-detail-label">🎓 Student</span>
+            <span id="studentDetailVal" class="info-detail-value">—</span>
+          </div>
           <div class="info-detail">
             <span class="info-detail-label">🚌 Bus No.</span>
             <span id="busNo" class="info-detail-value">—</span>
           </div>
-          <div class="info-detail">
+          <div class="info-detail route-detail">
             <span class="info-detail-label">🛣️ Route</span>
             <span id="routeNameEl" class="info-detail-value">—</span>
           </div>
@@ -134,6 +149,26 @@
           <div class="info-detail">
             <span class="info-detail-label">🕐 Last updated</span>
             <span id="lastUpdated" class="info-detail-value">—</span>
+          </div>
+        </div>
+
+        <!-- Extended Full Tracking System Section -->
+        <div id="fullTrackingSection" class="full-tracking-section">
+          <div class="tracking-action-bar">
+            <button id="recenterBusBtn" type="button" class="action-btn primary-action">
+              <span>🎯</span> Center Bus on Map
+            </button>
+            <button id="fitRouteBtn" type="button" class="action-btn secondary-action">
+              <span>🗺️</span> View Full Route
+            </button>
+            <a href="tel:01672230000" class="action-btn call-action">
+              <span>📞</span> Call School
+            </a>
+          </div>
+
+          <div class="route-timeline-card">
+            <h4 class="timeline-title">🚏 Route Timeline & Stop Order</h4>
+            <div id="routeTimelineList" class="route-timeline-list"></div>
           </div>
         </div>
       </section>
