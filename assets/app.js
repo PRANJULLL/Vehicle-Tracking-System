@@ -51,6 +51,7 @@ const expandBtnText     = document.getElementById('expandBtnText');
 const expandBtnIcon     = document.getElementById('expandBtnIcon');
 const recenterBusBtn    = document.getElementById('recenterBusBtn');
 const fitRouteBtn       = document.getElementById('fitRouteBtn');
+const closeDetailsBtn   = document.getElementById('closeDetailsBtn');
 const routeTimelineList = document.getElementById('routeTimelineList');
 
 let latestBusLocation = null;
@@ -643,6 +644,18 @@ if (infoSheetHeader) {
   });
 }
 
+if (closeDetailsBtn) {
+  closeDetailsBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleSheetMinimized(true);
+  });
+}
+
+map.on('click', () => {
+  if (infoSheet && !infoSheet.classList.contains('hidden') && !infoSheet.classList.contains('minimized')) {
+    toggleSheetMinimized(true);
+  }
+});
 if (recenterBusBtn) {
   recenterBusBtn.addEventListener('click', (e) => {
     e.stopPropagation();
